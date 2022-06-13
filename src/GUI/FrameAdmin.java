@@ -29,6 +29,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +56,12 @@ public class FrameAdmin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(248, 248, 242));
         jLabel1.setText("ADMINISTRADOR");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(80, 250, 123));
+        jButton1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(98, 114, 164));
+        jButton1.setText("Salir");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 710, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,6 +113,7 @@ public class FrameAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
