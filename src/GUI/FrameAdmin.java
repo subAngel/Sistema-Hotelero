@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author angel
@@ -14,7 +16,10 @@ public class FrameAdmin extends javax.swing.JFrame {
      * Creates new form FrameAdmin
      */
     public FrameAdmin() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,28 +33,124 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        panel_usuarios = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txt_usr_nombre1 = new javax.swing.JTextField();
+        txt_usr_nombre2 = new javax.swing.JTextField();
+        txt_usr_nombre3 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        panel_habitaciones = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(68, 71, 90));
+        jPanel1.setBackground(new java.awt.Color(40, 42, 54));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(98, 114, 164));
+        jPanel2.setBackground(new java.awt.Color(40, 42, 54));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+        jTabbedPane1.setBackground(new java.awt.Color(40, 42, 54));
+
+        panel_usuarios.setBackground(new java.awt.Color(98, 114, 164));
+        panel_usuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(98, 114, 164));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 250, 123)), "Datos del Usuario", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Roboto", 1, 18), new java.awt.Color(248, 248, 242))); // NOI18N
+        jPanel3.setForeground(new java.awt.Color(248, 248, 242));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel2.setText("Contraseña:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 90, 33));
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel3.setText("Nombre:");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 56, 68, 33));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel4.setText("Apellido:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 107, 68, 33));
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel5.setText("Username:");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 90, 33));
+
+        txt_usr_nombre1.setBackground(new java.awt.Color(248, 248, 242));
+        txt_usr_nombre1.setForeground(new java.awt.Color(68, 71, 90));
+        txt_usr_nombre1.setText("jTextField1");
+        jPanel3.add(txt_usr_nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 150, -1));
+
+        txt_usr_nombre2.setBackground(new java.awt.Color(248, 248, 242));
+        txt_usr_nombre2.setForeground(new java.awt.Color(68, 71, 90));
+        txt_usr_nombre2.setText("jTextField1");
+        jPanel3.add(txt_usr_nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 150, -1));
+
+        txt_usr_nombre3.setBackground(new java.awt.Color(248, 248, 242));
+        txt_usr_nombre3.setForeground(new java.awt.Color(68, 71, 90));
+        txt_usr_nombre3.setText("jTextField1");
+        jPanel3.add(txt_usr_nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, -1));
+
+        jPasswordField1.setBackground(new java.awt.Color(248, 248, 242));
+        jPasswordField1.setForeground(new java.awt.Color(68, 71, 90));
+        jPasswordField1.setText("jPasswordField1");
+        jPanel3.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 150, -1));
+
+        panel_usuarios.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 37, 290, 430));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        panel_usuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 63, 560, 400));
+
+        jTabbedPane1.addTab("Usuarios", panel_usuarios);
+
+        panel_habitaciones.setBackground(new java.awt.Color(98, 114, 164));
+
+        javax.swing.GroupLayout panel_habitacionesLayout = new javax.swing.GroupLayout(panel_habitaciones);
+        panel_habitaciones.setLayout(panel_habitacionesLayout);
+        panel_habitacionesLayout.setHorizontalGroup(
+            panel_habitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 940, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+        panel_habitacionesLayout.setVerticalGroup(
+            panel_habitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 549, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1000, 600));
+        jTabbedPane1.addTab("Habitaciones", panel_habitaciones);
+
+        jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 940, 590));
+
+        jButton1.setBackground(new java.awt.Color(80, 250, 123));
+        jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(98, 114, 164));
+        jButton1.setText("Salir");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 620, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1000, 680));
 
         jLabel1.setBackground(new java.awt.Color(68, 71, 90));
         jLabel1.setFont(new java.awt.Font("Roboto Black", 3, 48)); // NOI18N
@@ -57,22 +158,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jLabel1.setText("ADMINISTRADOR");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(80, 250, 123));
-        jButton1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(98, 114, 164));
-        jButton1.setText("Salir");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 710, -1, -1));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -115,7 +201,21 @@ public class FrameAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel panel_habitaciones;
+    private javax.swing.JPanel panel_usuarios;
+    private javax.swing.JTextField txt_usr_nombre1;
+    private javax.swing.JTextField txt_usr_nombre2;
+    private javax.swing.JTextField txt_usr_nombre3;
     // End of variables declaration//GEN-END:variables
 }

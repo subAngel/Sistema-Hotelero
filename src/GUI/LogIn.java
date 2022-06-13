@@ -112,7 +112,7 @@ public class LogIn extends javax.swing.JFrame {
 
         panel_background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 460, 770));
 
-        jPanel2.setBackground(new java.awt.Color(68, 71, 90));
+        jPanel2.setBackground(new java.awt.Color(40, 42, 54));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(68, 71, 90));
@@ -147,7 +147,7 @@ public class LogIn extends javax.swing.JFrame {
         txt_usuario.setForeground(new java.awt.Color(248, 248, 242));
         txt_usuario.setText("usuario....");
         txt_usuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 264, 450, 47));
+        jPanel2.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 264, 460, 47));
 
         jLabel5.setBackground(new java.awt.Color(68, 71, 90));
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -160,7 +160,7 @@ public class LogIn extends javax.swing.JFrame {
         jPasswordField1.setForeground(new java.awt.Color(248, 248, 242));
         jPasswordField1.setText("jPasswordField1");
         jPasswordField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 450, 50));
+        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 460, 50));
 
         jComboBox1.setBackground(new java.awt.Color(68, 71, 90));
         jComboBox1.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
