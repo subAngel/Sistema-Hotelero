@@ -4,17 +4,47 @@
  */
 package GUI;
 
+
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 /**
  *
  * @author angel
  */
 public class LogIn extends javax.swing.JFrame {
 
+    Font roboto = new Font("Roboto", Font.BOLD, 24);
+    
+    public class Imagen extends javax.swing.JPanel{
+        public Imagen(){
+            this.setSize(300,800);
+        }   
+    
+        public void paint(Graphics grafico){
+            Dimension height = getSize();
+            ImageIcon img = new ImageIcon(getClass().getResource("\\imagenes\\img-habitacion.jpg"));
+            grafico.drawImage(img.getImage(), 0, 0, height.width, height.height, null);
+            setOpaque(true);
+            super.paintComponent(grafico);
+        }
+    }
+   
     /**
      * Creates new form LogIn
      */
     public LogIn() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -26,25 +56,128 @@ public class LogIn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel_background = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txt_usuario = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        panel_background.setBackground(new java.awt.Color(40, 42, 54));
+        panel_background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(248, 248, 242));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/img-habitacion.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 460, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 2, Short.MAX_VALUE))
+        );
+
+        panel_background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 460, 770));
+
+        jPanel2.setBackground(new java.awt.Color(68, 71, 90));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("INICIO DE SESIÓN");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 320, 55));
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel3.setText("Contraseña");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 363, 325, 55));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel4.setText("Rol");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 489, 325, 55));
+
+        txt_usuario.setBackground(new java.awt.Color(68, 71, 90));
+        txt_usuario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_usuario.setForeground(new java.awt.Color(248, 222, 232));
+        txt_usuario.setText("usuario....");
+        txt_usuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jPanel2.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 264, 450, 47));
+
+        jSeparator1.setBackground(new java.awt.Color(80, 250, 123));
+        jSeparator1.setForeground(new java.awt.Color(80, 250, 123));
+        jSeparator1.setToolTipText("");
+        jSeparator1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 317, 450, 10));
+
+        jSeparator2.setForeground(new java.awt.Color(80, 250, 123));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 477, 450, 10));
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel5.setText("Usuario");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 203, 325, 55));
+
+        jPasswordField1.setBackground(new java.awt.Color(68, 71, 90));
+        jPasswordField1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(248, 222, 232));
+        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 450, 50));
+
+        jComboBox1.setBackground(new java.awt.Color(68, 71, 90));
+        jComboBox1.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(248, 248, 242));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Administrador", "Limpieza" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 230, -1));
+
+        panel_background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 770));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(panel_background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(panel_background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -76,7 +209,22 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JPanel panel_background;
+    private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 }
