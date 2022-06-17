@@ -136,7 +136,7 @@ public class LogIn extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(80, 250, 123));
         jSeparator1.setForeground(new java.awt.Color(80, 250, 123));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 460, 10));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 460, 10));
 
         jSeparator2.setBackground(new java.awt.Color(80, 250, 123));
         jSeparator2.setForeground(new java.awt.Color(80, 250, 123));
@@ -147,7 +147,7 @@ public class LogIn extends javax.swing.JFrame {
         txt_usuario.setForeground(new java.awt.Color(248, 248, 242));
         txt_usuario.setText("usuario....");
         txt_usuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 264, 460, 47));
+        jPanel2.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 460, 47));
 
         jLabel5.setBackground(new java.awt.Color(68, 71, 90));
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -163,7 +163,7 @@ public class LogIn extends javax.swing.JFrame {
         jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 460, 50));
 
         jComboBox1.setBackground(new java.awt.Color(68, 71, 90));
-        jComboBox1.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jComboBox1.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(248, 248, 242));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Administrador", "Limpieza" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +179,7 @@ public class LogIn extends javax.swing.JFrame {
         jButton1.setText("Ingresar");
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 660, 130, 40));
 
-        panel_background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 770));
+        panel_background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 540, 770));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

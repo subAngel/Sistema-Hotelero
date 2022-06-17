@@ -188,7 +188,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(98, 114, 164));
         jButton3.setText("Ingresar Habitación");
-        panel_usuarios.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 200, 40));
+        panel_usuarios.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 200, 40));
 
         jTabbedPane1.addTab("Usuarios", panel_usuarios);
 
@@ -271,7 +271,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(98, 114, 164));
         jButton2.setText("Ingresar Habitación");
-        panel_habitaciones.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, 40));
+        panel_habitaciones.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, 40));
 
         jTabbedPane1.addTab("Habitaciones", panel_habitaciones);
 

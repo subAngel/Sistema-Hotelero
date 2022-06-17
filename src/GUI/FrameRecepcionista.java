@@ -29,7 +29,9 @@ public class FrameRecepcionista extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        panel_habitaciones = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel5 = new javax.swing.JPanel();
+        jButton18 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -57,6 +59,8 @@ public class FrameRecepcionista extends javax.swing.JFrame {
         jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,25 +76,28 @@ public class FrameRecepcionista extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(98, 114, 164));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout panel_habitacionesLayout = new javax.swing.GroupLayout(panel_habitaciones);
-        panel_habitaciones.setLayout(panel_habitacionesLayout);
-        panel_habitacionesLayout.setHorizontalGroup(
-            panel_habitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
-        );
-        panel_habitacionesLayout.setVerticalGroup(
-            panel_habitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-        );
+        jTabbedPane1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
 
-        jPanel3.add(panel_habitaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 123, -1, 450));
+        jPanel5.setBackground(new java.awt.Color(98, 114, 164));
+        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(80, 250, 123), 1, true));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton18.setBackground(new java.awt.Color(80, 250, 123));
+        jButton18.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jButton18.setForeground(new java.awt.Color(98, 114, 164));
+        jButton18.setText("Generar Reservación");
+        jPanel5.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 498, 230, 51));
+
+        jTabbedPane1.addTab("Reservación", jPanel5);
+
+        jPanel3.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 310, 620));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 360, 670));
 
-        jPanel4.setBackground(new java.awt.Color(68, 71, 90));
+        jPanel4.setBackground(new java.awt.Color(40, 42, 54));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(68, 71, 90));
+        jPanel2.setBackground(new java.awt.Color(40, 42, 54));
         jPanel2.setLayout(new java.awt.GridLayout(5, 5, 15, 15));
 
         jButton1.setBackground(new java.awt.Color(139, 233, 253));
@@ -250,7 +257,22 @@ public class FrameRecepcionista extends javax.swing.JFrame {
         jButton25.setText("H25");
         jPanel2.add(jButton25);
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 560, 550));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 560, 330));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 560, 210));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 640, 670));
 
@@ -318,6 +340,7 @@ public class FrameRecepcionista extends javax.swing.JFrame {
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
@@ -338,6 +361,9 @@ public class FrameRecepcionista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel panel_habitaciones;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
