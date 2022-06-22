@@ -11,11 +11,13 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import mdlaf.MaterialLookAndFeel;
@@ -76,10 +78,10 @@ public class LogIn extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        txt_usuario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        txt_usuario = new javax.swing.JTextField();
+        txt_pass = new javax.swing.JPasswordField();
+        txt_rol = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -142,42 +144,50 @@ public class LogIn extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(80, 250, 123));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 460, 10));
 
-        txt_usuario.setBackground(new java.awt.Color(68, 71, 90));
-        txt_usuario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_usuario.setForeground(new java.awt.Color(248, 248, 242));
-        txt_usuario.setText("usuario....");
-        txt_usuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 460, 47));
-
         jLabel5.setBackground(new java.awt.Color(68, 71, 90));
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(248, 248, 242));
         jLabel5.setText("Usuario");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 203, 325, 55));
 
-        jPasswordField1.setBackground(new java.awt.Color(68, 71, 90));
-        jPasswordField1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(248, 248, 242));
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 460, 50));
+        txt_usuario.setBackground(new java.awt.Color(68, 71, 90));
+        txt_usuario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_usuario.setForeground(new java.awt.Color(248, 248, 242));
+        txt_usuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jPanel2.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 460, 47));
 
-        jComboBox1.setBackground(new java.awt.Color(68, 71, 90));
-        jComboBox1.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(248, 248, 242));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Administrador", "Limpieza" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        txt_pass.setBackground(new java.awt.Color(68, 71, 90));
+        txt_pass.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        txt_pass.setForeground(new java.awt.Color(248, 248, 242));
+        txt_pass.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        txt_pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                txt_passActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 230, -1));
+        jPanel2.add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 460, 50));
+
+        txt_rol.setBackground(new java.awt.Color(68, 71, 90));
+        txt_rol.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        txt_rol.setForeground(new java.awt.Color(248, 248, 242));
+        txt_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Administrador", "Limpieza" }));
+        txt_rol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_rolActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txt_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 230, -1));
 
         jButton1.setBackground(new java.awt.Color(80, 250, 123));
         jButton1.setFont(new java.awt.Font("Roboto", 3, 22)); // NOI18N
         jButton1.setForeground(new java.awt.Color(98, 114, 164));
         jButton1.setText("Ingresar");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 660, 130, 40));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 600, 130, 40));
 
         panel_background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 540, 770));
 
@@ -195,9 +205,56 @@ public class LogIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void txt_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_txt_passActionPerformed
+
+    private void txt_rolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_rolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_rolActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
+            ConexionMySQL Con = new ConexionMySQL();
+            String u = txt_usuario.getText();
+            String p = txt_pass.getText();
+            String rol = txt_rol.getSelectedItem().toString();
+
+            Con.ConectarBasedeDatos();
+
+            String SQL = "SELECT codigo,username FROM usuario"
+            + " WHERE username='"+u+"' AND password ='"+p+"' AND rol ='"+rol+"'";
+
+            if (rol== "Administrador" ){
+
+                Con.resultado = Con.sentencia.executeQuery(SQL);
+                if(Con.resultado.next()){
+                    setVisible(false);
+                    FrameAdmin admi = new FrameAdmin();
+
+                    admi.setVisible(true);
+                }else{
+                    JOptionPane.showMessageDialog(null,"Datos incorrectos");
+                }
+
+            }else if(rol== "Recepcionista" ){
+
+                Con.resultado = Con.sentencia.executeQuery(SQL);
+                if(Con.resultado.next()){
+                    setVisible(false);
+                    FrameRecepcionista rece = new  FrameRecepcionista();
+
+                    rece.setVisible(true);
+                }else{
+                    JOptionPane.showMessageDialog(null,"Datos incorrectos");
+                }
+
+            }
+
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null,ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,7 +287,6 @@ public class LogIn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -238,12 +294,13 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lbl_logo;
     private javax.swing.JLabel lbl_titulo_hotel;
     private javax.swing.JPanel panel_background;
+    private javax.swing.JPasswordField txt_pass;
+    private javax.swing.JComboBox<String> txt_rol;
     private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -61,6 +61,7 @@ public class FrameRecepcionista extends javax.swing.JFrame {
         jButton25 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton26 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -274,6 +275,15 @@ public class FrameRecepcionista extends javax.swing.JFrame {
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 560, 210));
 
+        jButton26.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jButton26.setText("Salir");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 610, -1, -1));
+
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 640, 670));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -293,6 +303,13 @@ public class FrameRecepcionista extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+
+        this.dispose();
+        LogIn a = new LogIn();
+        a.setVisible(true);
+    }//GEN-LAST:event_jButton26ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -349,6 +366,7 @@ public class FrameRecepcionista extends javax.swing.JFrame {
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
