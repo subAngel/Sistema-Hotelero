@@ -232,6 +232,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_codigoActionPerformed"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_codigoKeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel5">

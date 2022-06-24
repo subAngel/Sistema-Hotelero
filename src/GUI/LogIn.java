@@ -11,6 +11,9 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,13 +78,11 @@ public class LogIn extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         txt_usuario = new javax.swing.JTextField();
         txt_pass = new javax.swing.JPasswordField();
-        txt_rol = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,12 +131,6 @@ public class LogIn extends javax.swing.JFrame {
         jLabel3.setText("Contraseña");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 363, 325, 55));
 
-        jLabel4.setBackground(new java.awt.Color(68, 71, 90));
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel4.setText("Rol");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 489, 325, 55));
-
         jSeparator1.setBackground(new java.awt.Color(80, 250, 123));
         jSeparator1.setForeground(new java.awt.Color(80, 250, 123));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 460, 10));
@@ -167,17 +162,6 @@ public class LogIn extends javax.swing.JFrame {
         });
         jPanel2.add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 460, 50));
 
-        txt_rol.setBackground(new java.awt.Color(68, 71, 90));
-        txt_rol.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        txt_rol.setForeground(new java.awt.Color(248, 248, 242));
-        txt_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Administrador", "Limpieza" }));
-        txt_rol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_rolActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txt_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 230, -1));
-
         jButton1.setBackground(new java.awt.Color(80, 250, 123));
         jButton1.setFont(new java.awt.Font("Roboto", 3, 22)); // NOI18N
         jButton1.setForeground(new java.awt.Color(98, 114, 164));
@@ -187,7 +171,7 @@ public class LogIn extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 600, 130, 40));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 550, 170, 50));
 
         panel_background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 540, 770));
 
@@ -209,47 +193,74 @@ public class LogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_passActionPerformed
 
-    private void txt_rolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_rolActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_rolActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
             ConexionMySQL Con = new ConexionMySQL();
             String u = txt_usuario.getText();
             String p = txt_pass.getText();
-            String rol = txt_rol.getSelectedItem().toString();
+            //String rol = txt_rol.getSelectedItem().toString();
 
             Con.ConectarBasedeDatos();
 
-            String SQL = "SELECT codigo,username FROM usuario"
-            + " WHERE username='"+u+"' AND password ='"+p+"' AND rol ='"+rol+"'";
-
-            if (rol== "Administrador" ){
-
-                Con.resultado = Con.sentencia.executeQuery(SQL);
-                if(Con.resultado.next()){
-                    setVisible(false);
-                    FrameAdmin admi = new FrameAdmin();
-
-                    admi.setVisible(true);
+            String SQL = "select username, password, rol from usuario where username='" + u + "';";
+            
+            Connection con = Con.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                // si el usuario existe
+                String usr = rs.getString("username");
+                String pass = rs.getString("password");
+                String rol = rs.getString("rol");
+                
+                if(p.equals(pass)){
+                    // Vamos a su respectiva ventana
+                    if (rol.equals("Administrador") || rol.equals("administrador")){
+                        this.dispose();
+                        FrameAdmin admin = new FrameAdmin();
+                        admin.setVisible(true);
+                    } else if (rol.equals("Limpieza")){
+                        JOptionPane.showMessageDialog(null, "Aun no se ha creado esta funcionalidad...");
+                    } else if (rol.equals("Recepcionista")){
+                        this.dispose();
+                        FrameRecepcionista recepcionista = new FrameRecepcionista();
+                        recepcionista.setVisible(true);
+                    }
+                    
                 }else{
-                    JOptionPane.showMessageDialog(null,"Datos incorrectos");
+                    JOptionPane.showMessageDialog(null, "Contrasena incorrecta.");
                 }
-
-            }else if(rol== "Recepcionista" ){
-
-                Con.resultado = Con.sentencia.executeQuery(SQL);
-                if(Con.resultado.next()){
-                    setVisible(false);
-                    FrameRecepcionista rece = new  FrameRecepcionista();
-
-                    rece.setVisible(true);
-                }else{
-                    JOptionPane.showMessageDialog(null,"Datos incorrectos");
-                }
-
+                
+            } else {
+                //El usuario no existe
+                JOptionPane.showMessageDialog(null, "El usuario no existe en la base de datos. " + rs);
             }
+//            if (rol== "Administrador" ){
+//
+//                Con.resultado = Con.sentencia.executeQuery(SQL);
+//                if(Con.resultado.next()){
+//                    setVisible(false);
+//                    FrameAdmin admi = new FrameAdmin();
+//
+//                    admi.setVisible(true);
+//                }else{
+//                    JOptionPane.showMessageDialog(null,"Datos incorrectos");
+//                }
+//
+//            }else if(rol== "Recepcionista" ){
+//
+//                Con.resultado = Con.sentencia.executeQuery(SQL);
+//                if(Con.resultado.next()){
+//                    setVisible(false);
+//                    FrameRecepcionista rece = new  FrameRecepcionista();
+//
+//                    rece.setVisible(true);
+//                }else{
+//                    JOptionPane.showMessageDialog(null,"Datos incorrectos");
+//                }
+//
+//            }
 
         }catch (SQLException ex){
             JOptionPane.showMessageDialog(null,ex.getMessage());
@@ -290,7 +301,6 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -300,7 +310,6 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_titulo_hotel;
     private javax.swing.JPanel panel_background;
     private javax.swing.JPasswordField txt_pass;
-    private javax.swing.JComboBox<String> txt_rol;
     private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -164,6 +164,11 @@ public class FrameAdmin extends javax.swing.JFrame {
                 txt_codigoActionPerformed(evt);
             }
         });
+        txt_codigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_codigoKeyTyped(evt);
+            }
+        });
         jPanel5.add(txt_codigo);
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
@@ -505,6 +510,13 @@ public class FrameAdmin extends javax.swing.JFrame {
             "('"+codigo+"',"+user+"',"+pass+"',"+nombre+"',"+apellido+"',"+tele+"',"+email+"'"+rol+"')");*/
         this.mostrarTablaEmpleados();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txt_codigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_codigoKeyTyped
+        // TODO add your handling code here:
+        if(txt_codigo.getText().length() >= 4){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_codigoKeyTyped
 
     /**
      * @param args the command line arguments
