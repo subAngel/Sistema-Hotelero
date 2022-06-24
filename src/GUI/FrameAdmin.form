@@ -58,6 +58,9 @@
             <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="a4" green="72" red="62" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="36" green="2a" red="28" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -80,8 +83,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Usuarios">
-                        <Property name="tabTitle" type="java.lang.String" value="Usuarios"/>
+                      <JTabbedPaneConstraints tabName="Empleados">
+                        <Property name="tabTitle" type="java.lang.String" value="Empleados"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -411,7 +414,7 @@
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="320" y="90" width="610" height="150"/>
+                          <AbsoluteConstraints x="320" y="90" width="610" height="210"/>
                         </Constraint>
                       </Constraints>
 

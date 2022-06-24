@@ -24,10 +24,10 @@ public class ConexionMySQL {
 
     public void ConectarBasedeDatos() {
         try {
-            final String Controlador = "com.mysql.cj.jdbc.Driver";
+            final String Controlador = "com.mysql.jdbc.Driver";
             Class.forName(Controlador);
-            final String url_bd = "jdbc:mysql://localhost:3306/hotel";
-            conexion = DriverManager.getConnection(url_bd,"root","queen");
+            final String url_bd = "jdbc:mysql://localhost:3306/hotel_san_miguel";
+            conexion = DriverManager.getConnection(url_bd,"admin","admin");
             sentencia = conexion.createStatement();
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error ", JOptionPane.ERROR_MESSAGE);

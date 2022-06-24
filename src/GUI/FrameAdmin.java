@@ -88,7 +88,8 @@ public class FrameAdmin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(40, 42, 54));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTabbedPane1.setBackground(new java.awt.Color(40, 42, 54));
+        jTabbedPane1.setBackground(new java.awt.Color(98, 114, 164));
+        jTabbedPane1.setForeground(new java.awt.Color(40, 42, 54));
         jTabbedPane1.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
 
         panel_usuarios.setBackground(new java.awt.Color(98, 114, 164));
@@ -215,7 +216,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaU);
 
-        panel_usuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 610, 150));
+        panel_usuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 610, 210));
 
         jButton5.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
         jButton5.setText("Eliminar");
@@ -257,7 +258,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         });
         panel_usuarios.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 200, 40));
 
-        jTabbedPane1.addTab("Usuarios", panel_usuarios);
+        jTabbedPane1.addTab("Empleados", panel_usuarios);
 
         panel_habitaciones.setBackground(new java.awt.Color(98, 114, 164));
         panel_habitaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -381,29 +382,29 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         // ResultSet rs = cn.consulta("SELECT codigo,username,password,nombre,apellido,telefono,email,rol  FROM USUARIO");
         cn.ConectarBasedeDatos();
-        ResultSet rs = cn.consulta( "SELECT * FROM hotel.usuario");
+        ResultSet rs = cn.consulta( "SELECT codigo, username, nombre, telefono, email, rol FROM usuario where rol!='administrador';");
 
         try{
             DefaultTableModel dt = new DefaultTableModel();
             dt.addColumn("Codigo");
             dt.addColumn("Username");
-            dt.addColumn("Password");
+            //dt.addColumn("Password");
             dt.addColumn("Nombre");
-            dt.addColumn("Apellido");
+           // dt.addColumn("Apellido");
             dt.addColumn("Telefono");
             dt.addColumn("Email");
             dt.addColumn("Rol");
 
             while(rs.next()){
-                Object[] fila = new Object[8];
+                Object[] fila = new Object[6];
                 fila[0] = rs.getString(1);
                 fila[1] = rs.getString(2);
                 fila[2] = rs.getString(3);
                 fila[3] = rs.getString(4);
                 fila[4] = rs.getString(5);
                 fila[5] = rs.getString(6);
-                fila[6] = rs.getString(7);
-                fila[7] = rs.getString(8);
+//                fila[6] = rs.getString(7);
+//                fila[7] = rs.getString(8);
 
                 dt.addRow(fila);
             }

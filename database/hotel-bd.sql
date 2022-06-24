@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: hotel-bd
+-- Host: localhost    Database: hotel
 -- ------------------------------------------------------
--- Server version	8.0.25
+-- Server version	8.0.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,10 +23,9 @@ DROP TABLE IF EXISTS `administrador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `administrador` (
-  `codigo` char(4) NOT NULL,
-  PRIMARY KEY (`codigo`),
-  CONSTRAINT `codigo_usr` FOREIGN KEY (`codigo`) REFERENCES `usuario` (`codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `codigo` decimal(4,0) NOT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,7 +52,7 @@ CREATE TABLE `habitacion` (
   `precio` double(3,2) DEFAULT NULL,
   `estado` varchar(10) NOT NULL DEFAULT 'disponible',
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,7 +79,7 @@ CREATE TABLE `limpieza` (
   `salario` double(4,2) DEFAULT NULL,
   PRIMARY KEY (`codigo`),
   CONSTRAINT `codigo_usr_limp` FOREIGN KEY (`codigo`) REFERENCES `usuario` (`codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +108,7 @@ CREATE TABLE `recepcionista` (
   KEY `codigo_hab_recep_idx` (`codigo_hab`),
   CONSTRAINT `codigo_hab_recep` FOREIGN KEY (`codigo_hab`) REFERENCES `habitacion` (`codigo`),
   CONSTRAINT `codigo_usr_recep` FOREIGN KEY (`codigo`) REFERENCES `usuario` (`codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,9 +135,9 @@ CREATE TABLE `usuario` (
   `apellido` varchar(20) DEFAULT NULL,
   `telefono` varchar(10) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
-  `rol` varchar(10) NOT NULL,
+  `rol` varchar(20) NOT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,6 +146,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES ('1001','Admin','#tecnm','----','-----','------','-----','Administrador'),('2001','Jose','123','Jese','Suarez','95545421','sdfsefsed','Recepcionista'),('9999','angel','angel','Angel','Zorrilla','242442545','adfadf@gmail.com','Limpieza');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -159,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-18 12:17:55
+-- Dump completed on 2022-06-23 21:01:50
