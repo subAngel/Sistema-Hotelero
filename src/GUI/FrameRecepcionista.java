@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author angel
@@ -14,7 +16,10 @@ public class FrameRecepcionista extends javax.swing.JFrame {
      * Creates new form FrameRecepcionista
      */
     public FrameRecepcionista() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

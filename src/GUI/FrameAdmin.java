@@ -161,6 +161,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jLabel9.setText("Codigo:");
         jPanel5.add(jLabel9);
 
+        txt_codigo.setBackground(new java.awt.Color(248, 248, 242));
         txt_codigo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt_codigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,6 +263,11 @@ public class FrameAdmin extends javax.swing.JFrame {
         txt_email.setBackground(new java.awt.Color(248, 248, 242));
         txt_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt_email.setForeground(new java.awt.Color(68, 71, 90));
+        txt_email.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                txt_emailComponentHidden(evt);
+            }
+        });
         txt_email.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_emailKeyTyped(evt);
@@ -493,21 +499,25 @@ public class FrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if (isEmail(txt_email.getText())) {
+            JOptionPane.showMessageDialog(null, "Correo electrónico inválido", "e-mail inválido", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String codigo = txt_codigo.getText();
+            String user = txt_user.getText();
+            String pass = txt_pass.getText();
+            String nombre = txt_nombre.getText();
+            String apellido = txt_apellido.getText();
+            String tele = txt_telefono.getText();
+            String email = txt_email.getText();
+            String rol = rol_combo.getSelectedItem().toString();
 
-        String codigo = txt_codigo.getText();
-        String user = txt_user.getText();
-        String pass = txt_pass.getText();
-        String nombre = txt_nombre.getText();
-        String apellido = txt_apellido.getText();
-        String tele = txt_telefono.getText();
-        String email = txt_email.getText();
-        String rol = rol_combo.getSelectedItem().toString();
+            ConexionMySQL cn = new ConexionMySQL();
+            cn.ConectarBasedeDatos();
 
-        ConexionMySQL cn = new ConexionMySQL();
-        cn.ConectarBasedeDatos();
+            ResultSet rs = cn.accion("UPDATE USUARIO SET USERNAME = '" + user + "',PASSWORD = '" + pass + "',NOMBRE = '" + nombre + "',APELLIDO = '" + apellido + "', TELEFONO = '" + tele + "',EMAIL = '" + email + "',ROL = '" + rol + "'   WHERE CODIGO = '" + codigo + "'");
+            this.mostrarTablaEmpleados();
+        }
 
-        ResultSet rs = cn.accion("UPDATE USUARIO SET USERNAME = '" + user + "',PASSWORD = '" + pass + "',NOMBRE = '" + nombre + "',APELLIDO = '" + apellido + "', TELEFONO = '" + tele + "',EMAIL = '" + email + "',ROL = '" + rol + "'   WHERE CODIGO = '" + codigo + "'");
-        this.mostrarTablaEmpleados();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -611,6 +621,10 @@ public class FrameAdmin extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txt_emailKeyTyped
+
+    private void txt_emailComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_txt_emailComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_emailComponentHidden
 
     /**
      * @param args the command line arguments

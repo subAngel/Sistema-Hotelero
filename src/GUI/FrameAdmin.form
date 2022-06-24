@@ -226,6 +226,9 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="txt_codigo">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f8" red="f8" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Roboto" size="18" style="0"/>
                             </Property>
@@ -395,6 +398,7 @@
                             </Property>
                           </Properties>
                           <Events>
+                            <EventHandler event="componentHidden" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="txt_emailComponentHidden"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_emailKeyTyped"/>
                           </Events>
                         </Component>
