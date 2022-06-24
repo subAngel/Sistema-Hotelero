@@ -4,8 +4,12 @@
  */
 package GUI;
 
+import java.awt.Toolkit;
 import java.sql.ResultSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -76,7 +80,6 @@ public class FrameAdmin extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -179,6 +182,11 @@ public class FrameAdmin extends javax.swing.JFrame {
         txt_user.setBackground(new java.awt.Color(248, 248, 242));
         txt_user.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt_user.setForeground(new java.awt.Color(68, 71, 90));
+        txt_user.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_userKeyTyped(evt);
+            }
+        });
         jPanel5.add(txt_user);
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
@@ -189,6 +197,11 @@ public class FrameAdmin extends javax.swing.JFrame {
         txt_pass.setBackground(new java.awt.Color(248, 248, 242));
         txt_pass.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt_pass.setForeground(new java.awt.Color(68, 71, 90));
+        txt_pass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_passKeyTyped(evt);
+            }
+        });
         jPanel5.add(txt_pass);
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
@@ -204,6 +217,11 @@ public class FrameAdmin extends javax.swing.JFrame {
                 txt_nombreActionPerformed(evt);
             }
         });
+        txt_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_nombreKeyTyped(evt);
+            }
+        });
         jPanel5.add(txt_nombre);
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
@@ -214,6 +232,11 @@ public class FrameAdmin extends javax.swing.JFrame {
         txt_apellido.setBackground(new java.awt.Color(248, 248, 242));
         txt_apellido.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt_apellido.setForeground(new java.awt.Color(68, 71, 90));
+        txt_apellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_apellidoKeyTyped(evt);
+            }
+        });
         jPanel5.add(txt_apellido);
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
@@ -224,6 +247,11 @@ public class FrameAdmin extends javax.swing.JFrame {
         txt_telefono.setBackground(new java.awt.Color(248, 248, 242));
         txt_telefono.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt_telefono.setForeground(new java.awt.Color(68, 71, 90));
+        txt_telefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_telefonoKeyTyped(evt);
+            }
+        });
         jPanel5.add(txt_telefono);
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
@@ -234,6 +262,11 @@ public class FrameAdmin extends javax.swing.JFrame {
         txt_email.setBackground(new java.awt.Color(248, 248, 242));
         txt_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt_email.setForeground(new java.awt.Color(68, 71, 90));
+        txt_email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_emailKeyTyped(evt);
+            }
+        });
         jPanel5.add(txt_email);
 
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
@@ -347,12 +380,6 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 940, 600));
 
-        jButton1.setBackground(new java.awt.Color(80, 250, 123));
-        jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(98, 114, 164));
-        jButton1.setText("Salir");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 630, -1, -1));
-
         jButton7.setBackground(new java.awt.Color(80, 250, 123));
         jButton7.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton7.setForeground(new java.awt.Color(98, 114, 164));
@@ -388,26 +415,26 @@ public class FrameAdmin extends javax.swing.JFrame {
     private void txt_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_codigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_codigoActionPerformed
-    
-    public void mostrarTablaEmpleados(){
+
+    public void mostrarTablaEmpleados() {
         ConexionMySQL cn = new ConexionMySQL();
 
         // ResultSet rs = cn.consulta("SELECT codigo,username,password,nombre,apellido,telefono,email,rol  FROM USUARIO");
         cn.ConectarBasedeDatos();
-        ResultSet rs = cn.consulta( "SELECT codigo, username, nombre, telefono, email, rol FROM usuario where rol!='administrador';");
+        ResultSet rs = cn.consulta("SELECT codigo, username, nombre, telefono, email, rol FROM usuario where rol!='administrador';");
 
-        try{
+        try {
             DefaultTableModel dt = new DefaultTableModel();
             dt.addColumn("Codigo");
             dt.addColumn("Username");
             //dt.addColumn("Password");
             dt.addColumn("Nombre");
-           // dt.addColumn("Apellido");
+            // dt.addColumn("Apellido");
             dt.addColumn("Telefono");
             dt.addColumn("Email");
             dt.addColumn("Rol");
 
-            while(rs.next()){
+            while (rs.next()) {
                 Object[] fila = new Object[6];
                 fila[0] = rs.getString(1);
                 fila[1] = rs.getString(2);
@@ -422,11 +449,11 @@ public class FrameAdmin extends javax.swing.JFrame {
             }
             tablaU.setModel(dt);
 
-        }catch(Exception ex){
+        } catch (Exception ex) {
 
         }
     }
-    
+
     private void tablaUMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaUMousePressed
 
         int filas;
@@ -461,16 +488,16 @@ public class FrameAdmin extends javax.swing.JFrame {
         ConexionMySQL cn = new ConexionMySQL();
         cn.ConectarBasedeDatos();
 
-        ResultSet rs = cn.accion("DELETE FROM USUARIO WHERE CODIGO = '"+us+"'");    //' AND USERNAME = '+"+us+"'"); 
+        ResultSet rs = cn.accion("DELETE FROM USUARIO WHERE CODIGO = '" + us + "'");    //' AND USERNAME = '+"+us+"'"); 
         this.mostrarTablaEmpleados();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
 
-        String codigo=txt_codigo.getText();
-        String user=txt_user.getText();
-        String pass=txt_pass.getText();
-        String nombre=txt_nombre.getText();
+        String codigo = txt_codigo.getText();
+        String user = txt_user.getText();
+        String pass = txt_pass.getText();
+        String nombre = txt_nombre.getText();
         String apellido = txt_apellido.getText();
         String tele = txt_telefono.getText();
         String email = txt_email.getText();
@@ -479,7 +506,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         ConexionMySQL cn = new ConexionMySQL();
         cn.ConectarBasedeDatos();
 
-        ResultSet rs = cn.accion("UPDATE USUARIO SET USERNAME = '"+ user+"',PASSWORD = '"+pass+"',NOMBRE = '"+nombre+"',APELLIDO = '"+apellido+"', TELEFONO = '"+ tele+"',EMAIL = '"+ email+"',ROL = '"+ rol+"'   WHERE CODIGO = '"+codigo+"'");
+        ResultSet rs = cn.accion("UPDATE USUARIO SET USERNAME = '" + user + "',PASSWORD = '" + pass + "',NOMBRE = '" + nombre + "',APELLIDO = '" + apellido + "', TELEFONO = '" + tele + "',EMAIL = '" + email + "',ROL = '" + rol + "'   WHERE CODIGO = '" + codigo + "'");
         this.mostrarTablaEmpleados();
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -489,34 +516,101 @@ public class FrameAdmin extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    // Metodo para validar email
+    private boolean isEmail(String correo) {
+        Pattern pat = Pattern.compile("^([0-9a-zA-Z]([_.w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-w]*[0-9a-zA-Z].)+([a-zA-Z]{2,9}.)+[a-zA-Z]{2,3})$");
+        Matcher mat = pat.matcher(correo);
+
+        if (mat.find()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        String codigo=txt_codigo.getText();
-        String user=txt_user.getText();
-        String pass=txt_pass.getText();
-        String nombre=txt_nombre.getText();
-        String apellido = txt_apellido.getText();
-        String tele = txt_telefono.getText();
-        String email = txt_email.getText();
-        String rol = rol_combo.getSelectedItem().toString();
+        if (!isEmail(txt_email.getText())) {
+            JOptionPane.showMessageDialog(null, "Correo electrónico inválido", "e-mail inválido", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String codigo = txt_codigo.getText();
+            String user = txt_user.getText();
+            String pass = txt_pass.getText();
+            String nombre = txt_nombre.getText();
+            String apellido = txt_apellido.getText();
+            String tele = txt_telefono.getText();
+            String email = txt_email.getText();
+            String rol = rol_combo.getSelectedItem().toString();
 
-        ConexionMySQL cn = new ConexionMySQL();
-        cn.ConectarBasedeDatos();
+            ConexionMySQL cn = new ConexionMySQL();
+            cn.ConectarBasedeDatos();
 
-        ResultSet rs = cn.agregar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n" +
-            "('"+codigo+"','"+user+"','"+pass+"','"+nombre+"','"+apellido+"','"+tele+"','"+email+"','"+rol+"')");
+            ResultSet rs = cn.agregar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n"
+                    + "('" + codigo + "','" + user + "','" + pass + "','" + nombre + "','" + apellido + "','" + tele + "','" + email + "','" + rol + "')");
 
-        /*  ResultSet rs = cn.insertar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n" +
+            /*  ResultSet rs = cn.insertar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n" +
             "('"+codigo+"',"+user+"',"+pass+"',"+nombre+"',"+apellido+"',"+tele+"',"+email+"'"+rol+"')");*/
-        this.mostrarTablaEmpleados();
+            this.mostrarTablaEmpleados();
+        }
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void txt_codigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_codigoKeyTyped
         // TODO add your handling code here:
-        if(txt_codigo.getText().length() >= 4){
+        if (txt_codigo.getText().length() >= 4) {
             evt.consume();
         }
     }//GEN-LAST:event_txt_codigoKeyTyped
+
+    private void txt_telefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_telefonoKeyTyped
+        // TODO add your handling code here:
+        if (txt_telefono.getText().length() >= 10) {
+            evt.consume();
+        } else {
+            int key = evt.getKeyChar();
+            boolean num = key >= 48 && key <= 57;
+            if (!num) {
+                evt.consume();
+                Toolkit.getDefaultToolkit().beep();
+            }
+            if (txt_telefono.getText().trim().length() == 10);
+        }
+    }//GEN-LAST:event_txt_telefonoKeyTyped
+
+    private void txt_userKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_userKeyTyped
+        // TODO add your handling code here:
+        if (txt_user.getText().length() >= 15) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_userKeyTyped
+
+    private void txt_passKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_passKeyTyped
+        // TODO add your handling code here:
+        if (txt_pass.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_passKeyTyped
+
+    private void txt_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_nombreKeyTyped
+        // TODO add your handling code here:
+        if (txt_nombre.getText().length() >= 20) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_nombreKeyTyped
+
+    private void txt_apellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_apellidoKeyTyped
+        // TODO add your handling code here:
+        if (txt_apellido.getText().length() >= 20) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_apellidoKeyTyped
+
+    private void txt_emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_emailKeyTyped
+        // TODO add your handling code here:
+        if (txt_email.getText().length() >= 30) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_emailKeyTyped
 
     /**
      * @param args the command line arguments
@@ -554,7 +648,6 @@ public class FrameAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
