@@ -22,6 +22,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         this.setResizable(false);
         initComponents();
         this.setLocationRelativeTo(null);
+        this.mostrarTablaEmpleados();
     }
 
     /**
@@ -37,31 +38,29 @@ public class FrameAdmin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         panel_usuarios = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txt_nombre = new javax.swing.JTextField();
-        txt_apellido = new javax.swing.JTextField();
-        txt_user = new javax.swing.JTextField();
-        txt_pass = new javax.swing.JPasswordField();
-        jLabel6 = new javax.swing.JLabel();
-        txt_telefono = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        txt_email = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        rol_combo = new javax.swing.JComboBox<>();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel9 = new javax.swing.JLabel();
-        txt_codigo = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaU = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        txt_codigo = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_user = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txt_pass = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
+        txt_nombre = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txt_apellido = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txt_telefono = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txt_email = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        rol_combo = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
         panel_habitaciones = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -78,6 +77,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,109 +95,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         panel_usuarios.setBackground(new java.awt.Color(98, 114, 164));
         panel_usuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(98, 114, 164));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 250, 123)), "Datos del Usuario", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Roboto", 1, 18), new java.awt.Color(248, 248, 242))); // NOI18N
-        jPanel3.setForeground(new java.awt.Color(248, 248, 242));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel2.setText("Contraseña:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 90, 33));
-
-        jLabel3.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel3.setText("Nombre:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 68, 33));
-
-        jLabel4.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel4.setText("Apellido:");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 68, 33));
-
-        jLabel5.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel5.setText("Username:");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 33));
-
-        txt_nombre.setBackground(new java.awt.Color(248, 248, 242));
-        txt_nombre.setForeground(new java.awt.Color(68, 71, 90));
-        txt_nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nombreActionPerformed(evt);
-            }
-        });
-        jPanel3.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 150, -1));
-
-        txt_apellido.setBackground(new java.awt.Color(248, 248, 242));
-        txt_apellido.setForeground(new java.awt.Color(68, 71, 90));
-        jPanel3.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 150, -1));
-
-        txt_user.setBackground(new java.awt.Color(248, 248, 242));
-        txt_user.setForeground(new java.awt.Color(68, 71, 90));
-        jPanel3.add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 150, -1));
-
-        txt_pass.setBackground(new java.awt.Color(248, 248, 242));
-        txt_pass.setForeground(new java.awt.Color(68, 71, 90));
-        jPanel3.add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 150, -1));
-
-        jLabel6.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel6.setText("Telefono:");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 90, 33));
-
-        txt_telefono.setBackground(new java.awt.Color(248, 248, 242));
-        txt_telefono.setForeground(new java.awt.Color(68, 71, 90));
-        jPanel3.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 150, -1));
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel7.setText("Rol:");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 90, 33));
-
-        txt_email.setBackground(new java.awt.Color(248, 248, 242));
-        txt_email.setForeground(new java.awt.Color(68, 71, 90));
-        jPanel3.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 150, -1));
-
-        jLabel8.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel8.setText("E-mail:");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 90, 33));
-
-        rol_combo.setBackground(new java.awt.Color(248, 248, 242));
-        rol_combo.setForeground(new java.awt.Color(68, 71, 90));
-        rol_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Limpieza" }));
-        rol_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rol_comboActionPerformed(evt);
-            }
-        });
-        jPanel3.add(rol_combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 150, -1));
-        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 444, 240, 10));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Codigo:");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        txt_codigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_codigoActionPerformed(evt);
-            }
-        });
-        jPanel3.add(txt_codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 150, 20));
-
-        panel_usuarios.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 37, 290, 430));
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jButton4.setText("Mostrar usuarios");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        panel_usuarios.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, -1, -1));
-
+        tablaU.setFont(new java.awt.Font("Roboto Light", 0, 15)); // NOI18N
         tablaU.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -216,36 +114,29 @@ public class FrameAdmin extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaU);
 
-        panel_usuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 610, 210));
+        panel_usuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 560, 340));
 
+        jButton5.setBackground(new java.awt.Color(255, 85, 85));
         jButton5.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Eliminar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        panel_usuarios.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 110, -1));
+        panel_usuarios.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, 110, -1));
 
+        jButton6.setBackground(new java.awt.Color(255, 121, 198));
         jButton6.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Modificar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        panel_usuarios.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 110, -1));
-
-        jButton7.setBackground(new java.awt.Color(80, 250, 123));
-        jButton7.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(98, 114, 164));
-        jButton7.setText("Salir");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        panel_usuarios.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 440, -1, -1));
+        panel_usuarios.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 110, -1));
 
         jButton3.setBackground(new java.awt.Color(80, 250, 123));
         jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -256,7 +147,113 @@ public class FrameAdmin extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        panel_usuarios.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 200, 40));
+        panel_usuarios.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 200, 40));
+
+        jPanel5.setBackground(new java.awt.Color(98, 114, 164));
+        jPanel5.setForeground(new java.awt.Color(248, 248, 242));
+        jPanel5.setLayout(new java.awt.GridLayout(8, 2, 1, 15));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Codigo:");
+        jPanel5.add(jLabel9);
+
+        txt_codigo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_codigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_codigoActionPerformed(evt);
+            }
+        });
+        jPanel5.add(txt_codigo);
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel5.setText("Username:");
+        jPanel5.add(jLabel5);
+
+        txt_user.setBackground(new java.awt.Color(248, 248, 242));
+        txt_user.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_user.setForeground(new java.awt.Color(68, 71, 90));
+        jPanel5.add(txt_user);
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel2.setText("Contraseña:");
+        jPanel5.add(jLabel2);
+
+        txt_pass.setBackground(new java.awt.Color(248, 248, 242));
+        txt_pass.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_pass.setForeground(new java.awt.Color(68, 71, 90));
+        jPanel5.add(txt_pass);
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel3.setText("Nombre:");
+        jPanel5.add(jLabel3);
+
+        txt_nombre.setBackground(new java.awt.Color(248, 248, 242));
+        txt_nombre.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_nombre.setForeground(new java.awt.Color(68, 71, 90));
+        txt_nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nombreActionPerformed(evt);
+            }
+        });
+        jPanel5.add(txt_nombre);
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel4.setText("Apellido:");
+        jPanel5.add(jLabel4);
+
+        txt_apellido.setBackground(new java.awt.Color(248, 248, 242));
+        txt_apellido.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_apellido.setForeground(new java.awt.Color(68, 71, 90));
+        jPanel5.add(txt_apellido);
+
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel6.setText("Telefono:");
+        jPanel5.add(jLabel6);
+
+        txt_telefono.setBackground(new java.awt.Color(248, 248, 242));
+        txt_telefono.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_telefono.setForeground(new java.awt.Color(68, 71, 90));
+        jPanel5.add(txt_telefono);
+
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel8.setText("E-mail:");
+        jPanel5.add(jLabel8);
+
+        txt_email.setBackground(new java.awt.Color(248, 248, 242));
+        txt_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_email.setForeground(new java.awt.Color(68, 71, 90));
+        jPanel5.add(txt_email);
+
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel7.setText("Rol:");
+        jPanel5.add(jLabel7);
+
+        rol_combo.setBackground(new java.awt.Color(248, 248, 242));
+        rol_combo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        rol_combo.setForeground(new java.awt.Color(68, 71, 90));
+        rol_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Limpieza" }));
+        rol_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rol_comboActionPerformed(evt);
+            }
+        });
+        jPanel5.add(rol_combo);
+
+        panel_usuarios.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 330, 380));
+
+        jLabel13.setBackground(new java.awt.Color(98, 114, 164));
+        jLabel13.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Datos del Empleado");
+        panel_usuarios.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
         jTabbedPane1.addTab("Empleados", panel_usuarios);
 
@@ -343,13 +340,24 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Habitaciones", panel_habitaciones);
 
-        jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 940, 590));
+        jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 940, 600));
 
         jButton1.setBackground(new java.awt.Color(80, 250, 123));
         jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(98, 114, 164));
         jButton1.setText("Salir");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 620, -1, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 630, -1, -1));
+
+        jButton7.setBackground(new java.awt.Color(80, 250, 123));
+        jButton7.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(98, 114, 164));
+        jButton7.setText("Salir");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 630, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1000, 680));
 
@@ -375,9 +383,8 @@ public class FrameAdmin extends javax.swing.JFrame {
     private void txt_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_codigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_codigoActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
+    
+    public void mostrarTablaEmpleados(){
         ConexionMySQL cn = new ConexionMySQL();
 
         // ResultSet rs = cn.consulta("SELECT codigo,username,password,nombre,apellido,telefono,email,rol  FROM USUARIO");
@@ -413,8 +420,8 @@ public class FrameAdmin extends javax.swing.JFrame {
         }catch(Exception ex){
 
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
+    }
+    
     private void tablaUMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaUMousePressed
 
         int filas;
@@ -423,18 +430,18 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         String codigo = (String) tablaU.getValueAt(filas, 0);
         String user = (String) tablaU.getValueAt(filas, 1);
-        String password = (String) tablaU.getValueAt(filas, 2);
-        String nombre = (String) tablaU.getValueAt(filas, 3);
-        String apellido = (String) tablaU.getValueAt(filas, 4);
-        String telefono = (String) tablaU.getValueAt(filas, 5);
-        String email = (String) tablaU.getValueAt(filas, 6);
-        String rol = (String) tablaU.getValueAt(filas, 7);
+        //String password = (String) tablaU.getValueAt(filas, 2);
+        String nombre = (String) tablaU.getValueAt(filas, 2);
+        //String apellido = (String) tablaU.getValueAt(filas, 3);
+        String telefono = (String) tablaU.getValueAt(filas, 3);
+        String email = (String) tablaU.getValueAt(filas, 4);
+        String rol = (String) tablaU.getValueAt(filas, 5);
 
         txt_codigo.setText(codigo);
         txt_user.setText(user);
-        txt_pass.setText(password);
+        //txt_pass.setText(password);
         txt_nombre.setText(nombre);
-        txt_apellido.setText(apellido);
+        //txt_apellido.setText(apellido);
         txt_telefono.setText(telefono);
         txt_email.setText(email);
         //   rol_combo.selected(rol);
@@ -450,7 +457,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         cn.ConectarBasedeDatos();
 
         ResultSet rs = cn.accion("DELETE FROM USUARIO WHERE CODIGO = '"+us+"'");    //' AND USERNAME = '+"+us+"'"); 
-
+        this.mostrarTablaEmpleados();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -468,7 +475,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         cn.ConectarBasedeDatos();
 
         ResultSet rs = cn.accion("UPDATE USUARIO SET USERNAME = '"+ user+"',PASSWORD = '"+pass+"',NOMBRE = '"+nombre+"',APELLIDO = '"+apellido+"', TELEFONO = '"+ tele+"',EMAIL = '"+ email+"',ROL = '"+ rol+"'   WHERE CODIGO = '"+codigo+"'");
-
+        this.mostrarTablaEmpleados();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -496,6 +503,7 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         /*  ResultSet rs = cn.insertar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n" +
             "('"+codigo+"',"+user+"',"+pass+"',"+nombre+"',"+apellido+"',"+tele+"',"+email+"'"+rol+"')");*/
+        this.mostrarTablaEmpleados();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -537,7 +545,6 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -546,6 +553,7 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -557,12 +565,11 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
