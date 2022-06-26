@@ -144,7 +144,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(80, 250, 123));
         jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(98, 114, 164));
-        jButton3.setText("Agregar Usuario");
+        jButton3.setText("Agregar Empleado");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -556,7 +556,8 @@ public class FrameAdmin extends javax.swing.JFrame {
             cn.ConectarBasedeDatos();
 
             ResultSet rs = cn.agregar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n"
-                    + "('" + codigo + "','" + user + "','" + pass + "','" + nombre + "','" + apellido + "','" + tele + "','" + email + "','" + rol + "')");
+                    + "('" + codigo + "','" + user + "','" + pass + "','" + nombre + "','" + apellido + "','" + tele + "','" + email + "','" + rol + "');\n"
+                            + "create user ");
 
             /*  ResultSet rs = cn.insertar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n" +
             "('"+codigo+"',"+user+"',"+pass+"',"+nombre+"',"+apellido+"',"+tele+"',"+email+"'"+rol+"')");*/

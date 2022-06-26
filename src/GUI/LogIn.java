@@ -222,6 +222,8 @@ public class LogIn extends javax.swing.JFrame {
                         admin.setVisible(true);
                     } else if (rol.equals("Limpieza")){
                         JOptionPane.showMessageDialog(null, "Aun no se ha creado esta funcionalidad...");
+                        txt_usuario.setText("");
+                        txt_pass.setText("");
                     } else if (rol.equals("Recepcionista")){
                         this.dispose();
                         FrameRecepcionista recepcionista = new FrameRecepcionista();
