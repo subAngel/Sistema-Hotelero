@@ -633,7 +633,7 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         // ResultSet rs = cn.consulta("SELECT codigo,username,password,nombre,apellido,telefono,email,rol  FROM USUARIO");
         cn.ConectarBasedeDatos();
-        ResultSet rs = cn.consulta("SELECT curp, username, nombres, apellidos, email, rol, activo FROM empleado where rol!='3';");
+        ResultSet rs = cn.consulta("SELECT curp, username, nombres, email, rol, activo FROM empleado where rol!='3';");
 
         try {
             DefaultTableModel dt = new DefaultTableModel();
