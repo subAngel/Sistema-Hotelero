@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: hotel
+-- Host: localhost    Database: hotel
 -- ------------------------------------------------------
--- Server version	8.0.25
+-- Server version	8.0.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -58,7 +58,7 @@ CREATE TABLE `habitacion` (
   `id_hab` int NOT NULL,
   `tipo` int NOT NULL,
   `caracteristicas` text,
-  `precio` double(3,2) NOT NULL,
+  `precio` double(5,2) NOT NULL,
   `estado` varchar(10) NOT NULL,
   `numero` char(4) DEFAULT NULL,
   PRIMARY KEY (`id_hab`),
@@ -73,6 +73,7 @@ CREATE TABLE `habitacion` (
 
 LOCK TABLES `habitacion` WRITE;
 /*!40000 ALTER TABLE `habitacion` DISABLE KEYS */;
+INSERT INTO `habitacion` VALUES (10,1,'f',205.00,'Ocupada','7');
 /*!40000 ALTER TABLE `habitacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,4 +190,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-26 23:00:01
+-- Dump completed on 2022-06-27  3:19:46

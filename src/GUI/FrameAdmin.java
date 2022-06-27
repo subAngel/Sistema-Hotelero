@@ -27,6 +27,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.mostrarTablaEmpleados();
+        this.mostrarTablaHabitaciones();
     }
 
     /**
@@ -72,16 +73,16 @@ public class FrameAdmin extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         panel_habitaciones = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tabla_habitaciones = new javax.swing.JTable();
+        tablaH = new javax.swing.JTable();
         btn_modificarHab = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         tipo_combo = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        txt_num_hab = new javax.swing.JTextField();
+        txt_num = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txt_caracteristicas = new javax.swing.JTextArea();
+        txt_cara = new javax.swing.JTextArea();
         jLabel12 = new javax.swing.JLabel();
         estadoHab_combo = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
@@ -89,6 +90,8 @@ public class FrameAdmin extends javax.swing.JFrame {
         btn_ingresarHab = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         btn_borrarHab = new javax.swing.JButton();
+        id_habitacion = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
 
@@ -413,8 +416,8 @@ public class FrameAdmin extends javax.swing.JFrame {
         panel_habitaciones.setBackground(new java.awt.Color(98, 114, 164));
         panel_habitaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tabla_habitaciones.setBackground(new java.awt.Color(248, 248, 242));
-        tabla_habitaciones.setModel(new javax.swing.table.DefaultTableModel(
+        tablaH.setBackground(new java.awt.Color(248, 248, 242));
+        tablaH.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -425,9 +428,14 @@ public class FrameAdmin extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(tabla_habitaciones);
+        tablaH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tablaHMousePressed(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tablaH);
 
-        panel_habitaciones.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 910, 190));
+        panel_habitaciones.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 830, 190));
 
         btn_modificarHab.setBackground(new java.awt.Color(255, 121, 198));
         btn_modificarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -461,6 +469,11 @@ public class FrameAdmin extends javax.swing.JFrame {
         tipo_combo.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
         tipo_combo.setForeground(new java.awt.Color(68, 71, 90));
         tipo_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Individual", "Doble", "Triple", "Queen" }));
+        tipo_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipo_comboActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -478,15 +491,20 @@ public class FrameAdmin extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
         jPanel7.add(jLabel11, gridBagConstraints);
 
-        txt_num_hab.setBackground(new java.awt.Color(248, 248, 242));
-        txt_num_hab.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        txt_num_hab.setForeground(new java.awt.Color(68, 71, 90));
+        txt_num.setBackground(new java.awt.Color(248, 248, 242));
+        txt_num.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        txt_num.setForeground(new java.awt.Color(68, 71, 90));
+        txt_num.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_numActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel7.add(txt_num_hab, gridBagConstraints);
+        jPanel7.add(txt_num, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(248, 248, 242));
@@ -498,12 +516,12 @@ public class FrameAdmin extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(32, 0, 32, 1);
         jPanel7.add(jLabel10, gridBagConstraints);
 
-        txt_caracteristicas.setBackground(new java.awt.Color(248, 248, 242));
-        txt_caracteristicas.setColumns(20);
-        txt_caracteristicas.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        txt_caracteristicas.setForeground(new java.awt.Color(68, 71, 90));
-        txt_caracteristicas.setRows(5);
-        jScrollPane2.setViewportView(txt_caracteristicas);
+        txt_cara.setBackground(new java.awt.Color(248, 248, 242));
+        txt_cara.setColumns(20);
+        txt_cara.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        txt_cara.setForeground(new java.awt.Color(68, 71, 90));
+        txt_cara.setRows(5);
+        jScrollPane2.setViewportView(txt_cara);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -553,7 +571,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel7.add(txt_precio, gridBagConstraints);
 
-        panel_habitaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 580, 340));
+        panel_habitaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 580, 330));
 
         btn_ingresarHab.setBackground(new java.awt.Color(80, 250, 123));
         btn_ingresarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -587,6 +605,21 @@ public class FrameAdmin extends javax.swing.JFrame {
             }
         });
         panel_habitaciones.add(btn_borrarHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 210, 40));
+
+        id_habitacion.setBackground(new java.awt.Color(248, 248, 242));
+        id_habitacion.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        id_habitacion.setForeground(new java.awt.Color(68, 71, 90));
+        id_habitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                id_habitacionActionPerformed(evt);
+            }
+        });
+        panel_habitaciones.add(id_habitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 90, -1));
+
+        jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel18.setText("Id Habitación: ");
+        panel_habitaciones.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, -1));
 
         jTabbedPane1.addTab("Habitaciones", panel_habitaciones);
 
@@ -642,10 +675,50 @@ public class FrameAdmin extends javax.swing.JFrame {
             //dt.addColumn("Password");
             dt.addColumn("Nombres");
             //dt.addColumn("Apellidos");
+            dt.addColumn("Apellido");
             dt.addColumn("Email");
             dt.addColumn("Rol");
             //dt.addColumn("Sueldo");
             dt.addColumn("Esta Activo?");
+
+            while (rs.next()) {
+                Object[] fila = new Object[7];
+                fila[0] = rs.getString(1);
+                fila[1] = rs.getString(2);
+                fila[2] = rs.getString(3);
+                fila[3] = rs.getString(4);
+                fila[4] = rs.getString(5);
+                fila[5] = rs.getString(6);
+                fila[6] = rs.getString(7);
+                //fila[7] = rs.getString(8);
+
+                dt.addRow(fila);
+            }
+            tablaU.setModel(dt);
+
+        } catch (Exception ex) {
+
+        }
+    }
+    
+     public void mostrarTablaHabitaciones() {
+        ConexionMySQL cn = new ConexionMySQL();
+
+        // ResultSet rs = cn.consulta("SELECT codigo,username,password,nombre,apellido,telefono,email,rol  FROM USUARIO");
+        cn.ConectarBasedeDatos();
+        ResultSet rs = cn.consulta("SELECT id_hab, tipo, caracteristicas, precio, estado, numero FROM habitacion;");
+
+        try {
+            DefaultTableModel dt = new DefaultTableModel();
+            dt.addColumn("Id Habitacion");
+            dt.addColumn("Tipo");
+            //dt.addColumn("Password");
+            dt.addColumn("Caracteristicas");
+            //dt.addColumn("Apellidos");
+            dt.addColumn("Precio");
+            dt.addColumn("Estado");
+            dt.addColumn("Numero");
+           
 
             while (rs.next()) {
                 Object[] fila = new Object[6];
@@ -660,12 +733,14 @@ public class FrameAdmin extends javax.swing.JFrame {
 
                 dt.addRow(fila);
             }
-            tablaU.setModel(dt);
+            tablaH.setModel(dt);
 
         } catch (Exception ex) {
 
         }
     }
+    
+    
 
     private void tablaUMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaUMousePressed
 
@@ -677,16 +752,19 @@ public class FrameAdmin extends javax.swing.JFrame {
         String user = (String) tablaU.getValueAt(filas, 1);
         //String password = (String) tablaU.getValueAt(filas, 2);
         String nombres = (String) tablaU.getValueAt(filas, 2);
-        //String apellido = (String) tablaU.getValueAt(filas, 3);
-        String email = (String) tablaU.getValueAt(filas, 3);
-        String rol = (String) tablaU.getValueAt(filas, 4);
+        String apellido = (String) tablaU.getValueAt(filas, 3);
+        String email = (String) tablaU.getValueAt(filas, 4);
+        String rol = (String) tablaU.getValueAt(filas, 5);
         //String sueldo = (String) tablaU.getValueAt(filas, 5);
-        String estado = (String) tablaU.getValueAt(filas, 5);
+        String estado = (String) tablaU.getValueAt(filas, 6);
 
         txt_codigo.setText(curp);
         txt_user.setText(user);
         txt_nombre.setText(nombres);
+        txt_apellido.setText(apellido);
         txt_email.setText(email);
+        
+        
         if (rol == "Recepcionista")
             rol_combo.setSelectedIndex(0);
         else 
@@ -713,7 +791,7 @@ public class FrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if (isEmail(txt_email.getText())) {
+        if (!isEmail(txt_email.getText())) {
             JOptionPane.showMessageDialog(null, "Correo electrónico inválido", "e-mail inválido", JOptionPane.ERROR_MESSAGE);
         } else {
             String curp = txt_codigo.getText();
@@ -741,8 +819,8 @@ public class FrameAdmin extends javax.swing.JFrame {
 
             ResultSet rs = cn.accion("UPDATE empleado SET username = '" + user + "',password = '" + pass + "',nombres = '" + nombre + 
                     "',apellidos = '" + apellido + "', email = '" + email + "',rol = " + rol +  
-                    ", activo = '" +estado+"" +
-                    "'   WHERE CODIGO = '" + curp + "'");
+                    ", activo = '" +estado+"'" +
+                    " WHERE curp = '" + curp + "'");
             this.mostrarTablaEmpleados();
         }
 
@@ -803,8 +881,7 @@ public class FrameAdmin extends javax.swing.JFrame {
                     + "('" + curp.toUpperCase() + "','" + user + "','" + pass + "','" + nombre + "','" + apellido + "','" + email + "'," + 
                     rol + ", '" + estado + "');");
 
-            /*  ResultSet rs = cn.insertar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n" +
-            "('"+codigo+"',"+user+"',"+pass+"',"+nombre+"',"+apellido+"',"+tele+"',"+email+"'"+rol+"')");*/
+            
             this.mostrarTablaEmpleados();
             ResultSet r2 = cn.asignarPriv("create user '" + user + "' identified by '"+ pass + "';");
             ResultSet r3 = cn.asignarPriv("gratn " + privilegio + " to " + user + ";");
@@ -859,11 +936,49 @@ public class FrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_emailComponentHidden
 
     private void estado_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estado_comboActionPerformed
-        // TODO add your handling code here:
+     
+       
+        
+        
+        
     }//GEN-LAST:event_estado_comboActionPerformed
 
     private void btn_modificarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarHabActionPerformed
-        // TODO add your handling code here:
+      
+        
+        int id = Integer.parseInt(id_habitacion.getText());
+        String tipo =tipo_combo.getSelectedItem().toString();
+        String carac = txt_cara.getText();
+        Double precio= Double.parseDouble(txt_precio.getText());
+         String estado= estadoHab_combo.getSelectedItem().toString();
+         int numero = Integer.parseInt(txt_num.getText());
+       
+         
+         
+         int tip=0;
+        
+        if(tipo.equals("Individual")){
+            tip=1;
+        }else if(tipo.equals("Doble")){
+        tip=2;
+         }else if(tipo.equals("Triple")){
+        tip=3;
+         }else if(tipo.equals("Queen")){
+        tip=4;}
+        
+         
+            ConexionMySQL cn = new ConexionMySQL();
+            cn.ConectarBasedeDatos();
+            
+            
+
+            ResultSet rs = cn.accion("UPDATE habitacion SET tipo= '" + tip + "',caracteristicas= '" + carac +"',precio =" + precio + ", estado = '" + estado +"', numero = '" + numero + "' WHERE id_hab = '" + id+"'" );  //     "('" + id + "','" + tip + "','" +carac + "','" + precio + "','" + estado + "'," + numero + ");");
+     
+            this.mostrarTablaHabitaciones();
+            
+        
+     
+        
     }//GEN-LAST:event_btn_modificarHabActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -871,7 +986,43 @@ public class FrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btn_ingresarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarHabActionPerformed
-        // TODO add your handling code here:
+      
+        int id = Integer.parseInt(id_habitacion.getText());
+        String tipo =tipo_combo.getSelectedItem().toString();
+        String carac = txt_cara.getText();
+         Double precio= Double.parseDouble(txt_precio.getText());
+         String estado= estadoHab_combo.getSelectedItem().toString();
+         int numero = Integer.parseInt(txt_num.getText());
+       
+         
+         
+         int tip=0;
+        
+        if(tipo.equals("Individual")){
+            tip=1;
+        }else if(tipo.equals("Doble")){
+        tip=2;
+         }else if(tipo.equals("Triple")){
+        tip=3;
+         }else if(tipo.equals("Queen")){
+        tip=4;}
+        
+         
+            ConexionMySQL cn = new ConexionMySQL();
+            cn.ConectarBasedeDatos();
+            
+            
+
+            ResultSet rs = cn.agregar("insert into hotel.habitacion (id_hab, tipo, caracteristicas, precio, estado, numero) values"
+                    + "('" + id + "','" + tip + "','" +carac + "'," + precio + ",'" + estado + "','" + numero +"'" + ");");
+
+            /*  ResultSet rs = cn.insertar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n" +
+            "('"+codigo+"',"+user+"',"+pass+"',"+nombre+"',"+apellido+"',"+tele+"',"+email+"'"+rol+"')");*/
+            this.mostrarTablaHabitaciones();
+            
+        
+        
+        
     }//GEN-LAST:event_btn_ingresarHabActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -879,8 +1030,78 @@ public class FrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void btn_borrarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarHabActionPerformed
-        // TODO add your handling code here:
+     
+         int id = Integer.parseInt(id_habitacion.getText());
+
+        ConexionMySQL cn = new ConexionMySQL();
+        cn.ConectarBasedeDatos();
+
+        ResultSet rs = cn.accion("DELETE FROM hotel.habitacion WHERE id_hab = '" + id + "'");    //' AND USERNAME = '+"+us+"'"); 
+        this.mostrarTablaHabitaciones();
     }//GEN-LAST:event_btn_borrarHabActionPerformed
+
+    private void txt_numActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_numActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_numActionPerformed
+
+    private void id_habitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_habitacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_id_habitacionActionPerformed
+
+    private void tipo_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo_comboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipo_comboActionPerformed
+
+    private void tablaHMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaHMousePressed
+       
+         int filas;
+
+        filas = tablaH.getSelectedRow();
+
+        String id = (String) tablaH.getValueAt(filas, 0);
+        String tipo = (String) tablaH.getValueAt(filas, 1);   
+        String carac = (String) tablaH.getValueAt(filas, 2);
+        String precio = (String) tablaH.getValueAt(filas, 3);
+        String estado = (String) tablaH.getValueAt(filas, 4);
+        String numero = (String) tablaH.getValueAt(filas, 5);
+
+      
+        
+          if(tipo=="Individual")
+           tipo_combo.setSelectedIndex(0);
+        else if(tipo=="Doble")
+         tipo_combo.setSelectedIndex(1);
+         else if(tipo=="Triple")
+         tipo_combo.setSelectedIndex(2);
+         else if(tipo=="Queen")
+       tipo_combo.setSelectedIndex(3);
+         
+       
+       
+        if(estado=="Ocupada"){
+           tipo_combo.setSelectedIndex(0);
+        }else if(estado=="Limpia"){
+         tipo_combo.setSelectedIndex(1);
+         }else if(estado=="Sucia"){
+         tipo_combo.setSelectedIndex(2);
+         }
+       
+        
+        
+        
+        
+        id_habitacion.setText(id);
+      //  tipo_combo.setText(tipo);
+        txt_cara.setText(carac);
+        txt_precio.setText(precio);
+       
+       txt_num.setText(numero);
+        
+        
+    
+        
+        
+    }//GEN-LAST:event_tablaHMousePressed
 
     /**
      * @param args the command line arguments
@@ -923,6 +1144,7 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btn_modificarHab;
     private javax.swing.JComboBox<String> estadoHab_combo;
     private javax.swing.JComboBox<String> estado_combo;
+    private javax.swing.JTextField id_habitacion;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -937,6 +1159,7 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -958,15 +1181,15 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel panel_habitaciones;
     private javax.swing.JPanel panel_usuarios;
     private javax.swing.JComboBox<String> rol_combo;
+    private javax.swing.JTable tablaH;
     private javax.swing.JTable tablaU;
-    private javax.swing.JTable tabla_habitaciones;
     private javax.swing.JComboBox<String> tipo_combo;
     private javax.swing.JTextField txt_apellido;
-    private javax.swing.JTextArea txt_caracteristicas;
+    private javax.swing.JTextArea txt_cara;
     private javax.swing.JTextField txt_codigo;
     private javax.swing.JTextField txt_email;
     private javax.swing.JTextField txt_nombre;
-    private javax.swing.JTextField txt_num_hab;
+    private javax.swing.JTextField txt_num;
     private javax.swing.JPasswordField txt_pass;
     private javax.swing.JTextField txt_precio;
     private javax.swing.JTextField txt_user;
