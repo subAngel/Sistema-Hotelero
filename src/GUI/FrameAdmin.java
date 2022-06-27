@@ -614,6 +614,11 @@ public class FrameAdmin extends javax.swing.JFrame {
                 id_habitacionActionPerformed(evt);
             }
         });
+        id_habitacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                id_habitacionKeyTyped(evt);
+            }
+        });
         panel_habitaciones.add(id_habitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 90, -1));
 
         jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -1102,6 +1107,21 @@ public class FrameAdmin extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_tablaHMousePressed
+
+    private void id_habitacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_id_habitacionKeyTyped
+       int key = evt.getKeyChar();
+
+    boolean numeros = key >= 48 && key <= 57;
+        
+    if (!numeros)
+    {
+        evt.consume();
+    }
+
+    if (id_habitacion.getText().trim().length() == 10) {
+        evt.consume();
+    }
+    }//GEN-LAST:event_id_habitacionKeyTyped
 
     /**
      * @param args the command line arguments
