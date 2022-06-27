@@ -457,7 +457,9 @@ public class FrameAdmin extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
         jPanel7.add(jLabel6, gridBagConstraints);
 
+        tipo_combo.setBackground(new java.awt.Color(248, 248, 242));
         tipo_combo.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        tipo_combo.setForeground(new java.awt.Color(68, 71, 90));
         tipo_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Individual", "Doble", "Triple", "Queen" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -476,7 +478,9 @@ public class FrameAdmin extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
         jPanel7.add(jLabel11, gridBagConstraints);
 
+        txt_num_hab.setBackground(new java.awt.Color(248, 248, 242));
         txt_num_hab.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        txt_num_hab.setForeground(new java.awt.Color(68, 71, 90));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -494,9 +498,10 @@ public class FrameAdmin extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(32, 0, 32, 1);
         jPanel7.add(jLabel10, gridBagConstraints);
 
+        txt_caracteristicas.setBackground(new java.awt.Color(248, 248, 242));
         txt_caracteristicas.setColumns(20);
         txt_caracteristicas.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        txt_caracteristicas.setForeground(new java.awt.Color(248, 248, 242));
+        txt_caracteristicas.setForeground(new java.awt.Color(68, 71, 90));
         txt_caracteristicas.setRows(5);
         jScrollPane2.setViewportView(txt_caracteristicas);
 
@@ -517,7 +522,9 @@ public class FrameAdmin extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(11, 0, 11, 0);
         jPanel7.add(jLabel12, gridBagConstraints);
 
+        estadoHab_combo.setBackground(new java.awt.Color(248, 248, 242));
         estadoHab_combo.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        estadoHab_combo.setForeground(new java.awt.Color(68, 71, 90));
         estadoHab_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ocupada", "Limpia", "Sucia" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -536,7 +543,9 @@ public class FrameAdmin extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(11, 0, 11, 0);
         jPanel7.add(jLabel16, gridBagConstraints);
 
+        txt_precio.setBackground(new java.awt.Color(248, 248, 242));
         txt_precio.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        txt_precio.setForeground(new java.awt.Color(68, 71, 90));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;

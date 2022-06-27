@@ -202,7 +202,7 @@ public class LogIn extends javax.swing.JFrame {
 
             Con.ConectarBasedeDatos();
 
-            String SQL = "select username, password, rol from empleado where username='" + u + "';";
+            String SQL = "select username, password, rol from hotel.empleado where username='" + u + "';";
             
             Connection con = Con.getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
@@ -216,15 +216,15 @@ public class LogIn extends javax.swing.JFrame {
                 
                 if(p.equals(pass)){
                     // Vamos a su respectiva ventana
-                    if (rol.equals("Administrador") || rol.equals("administrador")){
+                    if (rol.equals("3")){
                         this.dispose();
                         FrameAdmin admin = new FrameAdmin();
                         admin.setVisible(true);
-                    } else if (rol.equals("Limpieza")){
+                    } else if (rol.equals("2")){
                         JOptionPane.showMessageDialog(null, "Aun no se ha creado esta funcionalidad...");
                         txt_usuario.setText("");
                         txt_pass.setText("");
-                    } else if (rol.equals("Recepcionista")){
+                    } else if (rol.equals("1")){
                         this.dispose();
                         FrameRecepcionista recepcionista = new FrameRecepcionista();
                         recepcionista.setVisible(true);
