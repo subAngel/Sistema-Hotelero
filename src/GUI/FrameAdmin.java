@@ -69,21 +69,26 @@ public class FrameAdmin extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
         panel_habitaciones = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        txt_hab_numero = new javax.swing.JTextField();
-        txt_username1 = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel16 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        tabla_habitaciones = new javax.swing.JTable();
+        btn_modificarHab = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        tipo_combo = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        txt_num_hab = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txt_caracteristicas = new javax.swing.JTextArea();
+        jLabel12 = new javax.swing.JLabel();
+        estadoHab_combo = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
+        txt_precio = new javax.swing.JTextField();
+        btn_ingresarHab = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        btn_borrarHab = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
 
@@ -392,69 +397,24 @@ public class FrameAdmin extends javax.swing.JFrame {
         jLabel13.setText("Datos del Empleado");
         panel_usuarios.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
+        jButton8.setBackground(new java.awt.Color(255, 85, 85));
+        jButton8.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Eliminar");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        panel_usuarios.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 120, 40));
+
         jTabbedPane1.addTab("Empleados", panel_usuarios);
 
         panel_habitaciones.setBackground(new java.awt.Color(98, 114, 164));
         panel_habitaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(98, 114, 164));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 250, 123)), "Datos de la Habitación", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Roboto", 1, 18), new java.awt.Color(248, 248, 242))); // NOI18N
-        jPanel4.setForeground(new java.awt.Color(248, 248, 242));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel10.setText("Tipo de Habitación");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 56, 160, 33));
-
-        jLabel11.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel11.setText("Num.De Habitación");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 140, 33));
-
-        jLabel12.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel12.setText("Caracteristicas:");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 130, 33));
-
-        txt_hab_numero.setBackground(new java.awt.Color(248, 248, 242));
-        txt_hab_numero.setFont(new java.awt.Font("Roboto", 0, 15)); // NOI18N
-        txt_hab_numero.setForeground(new java.awt.Color(68, 71, 90));
-        txt_hab_numero.setText("jTextField1");
-        jPanel4.add(txt_hab_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 140, -1));
-
-        txt_username1.setBackground(new java.awt.Color(248, 248, 242));
-        txt_username1.setFont(new java.awt.Font("Roboto", 0, 15)); // NOI18N
-        txt_username1.setForeground(new java.awt.Color(68, 71, 90));
-        txt_username1.setText("jTextField1");
-        jPanel4.add(txt_username1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 140, -1));
-        jPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 444, 240, 10));
-
-        jComboBox1.setBackground(new java.awt.Color(248, 248, 242));
-        jComboBox1.setFont(new java.awt.Font("Roboto", 0, 15)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(68, 71, 90));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 140, -1));
-
-        jLabel16.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel16.setText("Precio: ");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 90, 33));
-
-        jTextArea1.setBackground(new java.awt.Color(248, 248, 242));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(68, 71, 90));
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jScrollPane2.setViewportView(jTextArea1);
-
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 300, -1));
-
-        panel_habitaciones.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 37, 340, 430));
-
-        jTable2.setBackground(new java.awt.Color(248, 248, 242));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_habitaciones.setBackground(new java.awt.Color(248, 248, 242));
+        tabla_habitaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -465,15 +425,159 @@ public class FrameAdmin extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(tabla_habitaciones);
 
-        panel_habitaciones.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 42, 516, -1));
+        panel_habitaciones.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 910, 190));
 
-        jButton2.setBackground(new java.awt.Color(80, 250, 123));
-        jButton2.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(98, 114, 164));
-        jButton2.setText("Ingresar Habitación");
-        panel_habitaciones.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, 40));
+        btn_modificarHab.setBackground(new java.awt.Color(255, 121, 198));
+        btn_modificarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btn_modificarHab.setForeground(new java.awt.Color(248, 248, 242));
+        btn_modificarHab.setText("Modificar Habitación");
+        btn_modificarHab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_modificarHabActionPerformed(evt);
+            }
+        });
+        panel_habitaciones.add(btn_modificarHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, 210, 40));
+
+        jPanel7.setBackground(new java.awt.Color(98, 114, 164));
+        jPanel7.setForeground(new java.awt.Color(248, 248, 242));
+        java.awt.GridBagLayout jPanel7Layout = new java.awt.GridBagLayout();
+        jPanel7Layout.columnWidths = new int[] {0, 10, 0, 10, 0};
+        jPanel7Layout.rowHeights = new int[] {0, 6, 0, 6, 0, 6, 0, 6, 0};
+        jPanel7.setLayout(jPanel7Layout);
+
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel6.setText("Tipo de Habitación: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
+        jPanel7.add(jLabel6, gridBagConstraints);
+
+        tipo_combo.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        tipo_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Individual", "Doble", "Triple", "Queen" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel7.add(tipo_combo, gridBagConstraints);
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel11.setText("Número de Habitación:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
+        jPanel7.add(jLabel11, gridBagConstraints);
+
+        txt_num_hab.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel7.add(txt_num_hab, gridBagConstraints);
+
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel10.setText("Caracteristicas: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(32, 0, 32, 1);
+        jPanel7.add(jLabel10, gridBagConstraints);
+
+        txt_caracteristicas.setColumns(20);
+        txt_caracteristicas.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        txt_caracteristicas.setForeground(new java.awt.Color(248, 248, 242));
+        txt_caracteristicas.setRows(5);
+        jScrollPane2.setViewportView(txt_caracteristicas);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel7.add(jScrollPane2, gridBagConstraints);
+
+        jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel12.setText("Estado:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(11, 0, 11, 0);
+        jPanel7.add(jLabel12, gridBagConstraints);
+
+        estadoHab_combo.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        estadoHab_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ocupada", "Limpia", "Sucia" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel7.add(estadoHab_combo, gridBagConstraints);
+
+        jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel16.setText("Precio: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(11, 0, 11, 0);
+        jPanel7.add(jLabel16, gridBagConstraints);
+
+        txt_precio.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel7.add(txt_precio, gridBagConstraints);
+
+        panel_habitaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 580, 340));
+
+        btn_ingresarHab.setBackground(new java.awt.Color(80, 250, 123));
+        btn_ingresarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btn_ingresarHab.setForeground(new java.awt.Color(98, 114, 164));
+        btn_ingresarHab.setText("Agregar  Habitación");
+        btn_ingresarHab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresarHabActionPerformed(evt);
+            }
+        });
+        panel_habitaciones.add(btn_ingresarHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, 210, 40));
+
+        jButton9.setBackground(new java.awt.Color(80, 250, 123));
+        jButton9.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(98, 114, 164));
+        jButton9.setText("Ingresar Habitación");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        panel_habitaciones.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, -1, 40));
+
+        btn_borrarHab.setBackground(new java.awt.Color(255, 85, 85));
+        btn_borrarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btn_borrarHab.setForeground(new java.awt.Color(248, 248, 242));
+        btn_borrarHab.setText("Eliminar Habitación");
+        btn_borrarHab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_borrarHabActionPerformed(evt);
+            }
+        });
+        panel_habitaciones.add(btn_borrarHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 210, 40));
 
         jTabbedPane1.addTab("Habitaciones", panel_habitaciones);
 
@@ -749,6 +853,26 @@ public class FrameAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_estado_comboActionPerformed
 
+    private void btn_modificarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarHabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_modificarHabActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void btn_ingresarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarHabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ingresarHabActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void btn_borrarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarHabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_borrarHabActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -785,13 +909,17 @@ public class FrameAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_borrarHab;
+    private javax.swing.JButton btn_ingresarHab;
+    private javax.swing.JButton btn_modificarHab;
+    private javax.swing.JComboBox<String> estadoHab_combo;
     private javax.swing.JComboBox<String> estado_combo;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -804,33 +932,34 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel panel_habitaciones;
     private javax.swing.JPanel panel_usuarios;
     private javax.swing.JComboBox<String> rol_combo;
     private javax.swing.JTable tablaU;
+    private javax.swing.JTable tabla_habitaciones;
+    private javax.swing.JComboBox<String> tipo_combo;
     private javax.swing.JTextField txt_apellido;
+    private javax.swing.JTextArea txt_caracteristicas;
     private javax.swing.JTextField txt_codigo;
     private javax.swing.JTextField txt_email;
-    private javax.swing.JTextField txt_hab_numero;
     private javax.swing.JTextField txt_nombre;
+    private javax.swing.JTextField txt_num_hab;
     private javax.swing.JPasswordField txt_pass;
+    private javax.swing.JTextField txt_precio;
     private javax.swing.JTextField txt_user;
-    private javax.swing.JTextField txt_username1;
     // End of variables declaration//GEN-END:variables
 }

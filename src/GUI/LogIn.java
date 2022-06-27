@@ -202,7 +202,7 @@ public class LogIn extends javax.swing.JFrame {
 
             Con.ConectarBasedeDatos();
 
-            String SQL = "select username, password, rol from usuario where username='" + u + "';";
+            String SQL = "select username, password, rol from empleado where username='" + u + "';";
             
             Connection con = Con.getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
