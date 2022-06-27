@@ -742,7 +742,7 @@ public class FrameAdmin extends javax.swing.JFrame {
             ResultSet rs = cn.accion("UPDATE empleado SET username = '" + user + "',password = '" + pass + "',nombres = '" + nombre + 
                     "',apellidos = '" + apellido + "', email = '" + email + "',rol = " + rol +  
                     ", activo = '" +estado+"" +
-                    "'   WHERE CODIGO = '" + curp + "'");
+                    "'   WHERE curp = '" + curp + "'");
             this.mostrarTablaEmpleados();
         }
 
