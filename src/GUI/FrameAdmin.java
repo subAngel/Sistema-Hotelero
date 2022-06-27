@@ -64,10 +64,9 @@ public class FrameAdmin extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         rol_combo = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        txt_sueldo = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         estado_combo = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         panel_habitaciones = new javax.swing.JPanel();
@@ -354,22 +353,6 @@ public class FrameAdmin extends javax.swing.JFrame {
         });
         jPanel6.add(rol_combo);
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setText("Sueldo:");
-        jPanel6.add(jLabel6);
-
-        txt_sueldo.setBackground(new java.awt.Color(248, 248, 242));
-        txt_sueldo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_sueldo.setForeground(new java.awt.Color(68, 71, 90));
-        txt_sueldo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_sueldoKeyTyped(evt);
-            }
-        });
-        jPanel6.add(txt_sueldo);
-
         jLabel15.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(248, 248, 242));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -386,8 +369,7 @@ public class FrameAdmin extends javax.swing.JFrame {
             }
         });
         jPanel6.add(estado_combo);
-
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 430, 130));
+        jPanel6.add(jLabel7);
 
         jButton3.setBackground(new java.awt.Color(80, 250, 123));
         jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -398,7 +380,9 @@ public class FrameAdmin extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 180, 200, 40));
+        jPanel6.add(jButton3);
+
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 450, 160));
 
         panel_usuarios.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 860, 300));
 
@@ -536,18 +520,19 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         // ResultSet rs = cn.consulta("SELECT codigo,username,password,nombre,apellido,telefono,email,rol  FROM USUARIO");
         cn.ConectarBasedeDatos();
-        ResultSet rs = cn.consulta("SELECT codigo, username, nombre, telefono, email, rol FROM usuario where rol!='administrador';");
+        ResultSet rs = cn.consulta("SELECT curp, username, nombres, apellidos, email, rol, activo FROM empleado where rol!='3';");
 
         try {
             DefaultTableModel dt = new DefaultTableModel();
-            dt.addColumn("Codigo");
-            dt.addColumn("Username");
+            dt.addColumn("Curp");
+            dt.addColumn("Usuario");
             //dt.addColumn("Password");
-            dt.addColumn("Nombre");
-            // dt.addColumn("Apellido");
-            dt.addColumn("Telefono");
+            dt.addColumn("Nombres");
+            //dt.addColumn("Apellidos");
             dt.addColumn("Email");
             dt.addColumn("Rol");
+            //dt.addColumn("Sueldo");
+            dt.addColumn("Esta Activo?");
 
             while (rs.next()) {
                 Object[] fila = new Object[6];
@@ -557,8 +542,8 @@ public class FrameAdmin extends javax.swing.JFrame {
                 fila[3] = rs.getString(4);
                 fila[4] = rs.getString(5);
                 fila[5] = rs.getString(6);
-//                fila[6] = rs.getString(7);
-//                fila[7] = rs.getString(8);
+               // fila[6] = rs.getString(7);
+                //fila[7] = rs.getString(8);
 
                 dt.addRow(fila);
             }
@@ -575,24 +560,31 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         filas = tablaU.getSelectedRow();
 
-        String codigo = (String) tablaU.getValueAt(filas, 0);
+        String curp = (String) tablaU.getValueAt(filas, 0);
         String user = (String) tablaU.getValueAt(filas, 1);
         //String password = (String) tablaU.getValueAt(filas, 2);
-        String nombre = (String) tablaU.getValueAt(filas, 2);
+        String nombres = (String) tablaU.getValueAt(filas, 2);
         //String apellido = (String) tablaU.getValueAt(filas, 3);
-        String telefono = (String) tablaU.getValueAt(filas, 3);
-        String email = (String) tablaU.getValueAt(filas, 4);
-        String rol = (String) tablaU.getValueAt(filas, 5);
+        String email = (String) tablaU.getValueAt(filas, 3);
+        String rol = (String) tablaU.getValueAt(filas, 4);
+        //String sueldo = (String) tablaU.getValueAt(filas, 5);
+        String estado = (String) tablaU.getValueAt(filas, 5);
 
-        txt_codigo.setText(codigo);
+        txt_codigo.setText(curp);
         txt_user.setText(user);
-        //txt_pass.setText(password);
-        txt_nombre.setText(nombre);
-        //txt_apellido.setText(apellido);
-        txt_sueldo.setText(telefono);
+        txt_nombre.setText(nombres);
         txt_email.setText(email);
-        //   rol_combo.selected(rol);
-        //  txt_pass.setText(password);
+        if (rol == "Recepcionista")
+            rol_combo.setSelectedIndex(0);
+        else 
+            rol_combo.setSelectedIndex(1);
+        rol_combo.setSelectedIndex(0);
+        //txt_sueldo.setText(sueldo);
+        if (estado=="Si")
+            estado_combo.setSelectedIndex(0);
+        else 
+            estado_combo.setSelectedIndex(1);
+        
 
     }//GEN-LAST:event_tablaUMousePressed
 
@@ -603,7 +595,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         ConexionMySQL cn = new ConexionMySQL();
         cn.ConectarBasedeDatos();
 
-        ResultSet rs = cn.accion("DELETE FROM USUARIO WHERE CODIGO = '" + us + "'");    //' AND USERNAME = '+"+us+"'"); 
+        ResultSet rs = cn.accion("DELETE FROM hotel.empleado WHERE curp = '" + us + "'");    //' AND USERNAME = '+"+us+"'"); 
         this.mostrarTablaEmpleados();
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -611,19 +603,33 @@ public class FrameAdmin extends javax.swing.JFrame {
         if (isEmail(txt_email.getText())) {
             JOptionPane.showMessageDialog(null, "Correo electrónico inválido", "e-mail inválido", JOptionPane.ERROR_MESSAGE);
         } else {
-            String codigo = txt_codigo.getText();
+            String curp = txt_codigo.getText();
             String user = txt_user.getText();
             String pass = txt_pass.getText();
             String nombre = txt_nombre.getText();
             String apellido = txt_apellido.getText();
-            String tele = txt_sueldo.getText();
+            //String salario = txt_sueldo.getText();
+            //double sueldo = Double.parseDouble(salario);
             String email = txt_email.getText();
-            String rol = rol_combo.getSelectedItem().toString();
+            String rol = rol_combo.getSelectedItem().toString(), estado = estado_combo.getSelectedItem().toString();
+            if (rol.equals("Recepcionista"))
+                rol = "1";
+            else 
+                rol = "2";
+            if(estado.equals("Activo"))
+                estado = "Si";
+            else 
+                estado = "No";
+            rol = rol_combo.getSelectedItem().toString();
+            String privilegio = "";
 
             ConexionMySQL cn = new ConexionMySQL();
             cn.ConectarBasedeDatos();
 
-            ResultSet rs = cn.accion("UPDATE USUARIO SET USERNAME = '" + user + "',PASSWORD = '" + pass + "',NOMBRE = '" + nombre + "',APELLIDO = '" + apellido + "', TELEFONO = '" + tele + "',EMAIL = '" + email + "',ROL = '" + rol + "'   WHERE CODIGO = '" + codigo + "'");
+            ResultSet rs = cn.accion("UPDATE empleado SET username = '" + user + "',password = '" + pass + "',nombres = '" + nombre + 
+                    "',apellidos = '" + apellido + "', email = '" + email + "',rol = " + rol +  
+                    ", activo = '" +estado+"" +
+                    "'   WHERE CODIGO = '" + curp + "'");
             this.mostrarTablaEmpleados();
         }
 
@@ -652,25 +658,43 @@ public class FrameAdmin extends javax.swing.JFrame {
         if (!isEmail(txt_email.getText())) {
             JOptionPane.showMessageDialog(null, "Correo electrónico inválido", "e-mail inválido", JOptionPane.ERROR_MESSAGE);
         } else {
-            String codigo = txt_codigo.getText();
+            String curp = txt_codigo.getText();
             String user = txt_user.getText();
             String pass = txt_pass.getText();
             String nombre = txt_nombre.getText();
             String apellido = txt_apellido.getText();
-            String tele = txt_sueldo.getText();
+            //String salario = txt_sueldo.getText();
+            //double sueldo = Double.parseDouble(salario);
             String email = txt_email.getText();
-            String rol = rol_combo.getSelectedItem().toString();
-
+            String rol, estado;
+            if(estado_combo.getSelectedItem().toString().equals("Activo"))
+                estado = "Si";
+            else 
+                estado = "No";
+            rol = rol_combo.getSelectedItem().toString();
+            String privilegio = "";
+            if (rol.equals("Recepcionista"))
+                privilegio = "recepcionista_hotel";
+            else if (rol.equals("Limpieza"))
+                privilegio = "limpieza_hotel";
+            
+            if (rol.equals("Recepcionista"))
+                rol = "1";
+            else 
+                rol = "2";
+            
             ConexionMySQL cn = new ConexionMySQL();
             cn.ConectarBasedeDatos();
 
-            ResultSet rs = cn.agregar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n"
-                    + "('" + codigo + "','" + user + "','" + pass + "','" + nombre + "','" + apellido + "','" + tele + "','" + email + "','" + rol + "');\n"
-                            + "create user ");
+            ResultSet rs = cn.agregar("insert into hotel.empleado (curp,username,password,nombres,apellidos,email,rol, activo) values \n"
+                    + "('" + curp.toUpperCase() + "','" + user + "','" + pass + "','" + nombre + "','" + apellido + "','" + email + "'," + 
+                    rol + ", '" + estado + "');");
 
             /*  ResultSet rs = cn.insertar("insert into usuario (codigo,username,password,nombre,apellido,telefono,email,rol) values \n" +
             "('"+codigo+"',"+user+"',"+pass+"',"+nombre+"',"+apellido+"',"+tele+"',"+email+"'"+rol+"')");*/
             this.mostrarTablaEmpleados();
+            ResultSet r2 = cn.asignarPriv("create user '" + user + "' identified by '"+ pass + "';");
+            ResultSet r3 = cn.asignarPriv("gratn " + privilegio + " to " + user + ";");
         }
 
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -682,24 +706,9 @@ public class FrameAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txt_codigoKeyTyped
 
-    private void txt_sueldoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_sueldoKeyTyped
-        // TODO add your handling code here:
-        if (txt_sueldo.getText().length() >= 10) {
-            evt.consume();
-        } else {
-            int key = evt.getKeyChar();
-            boolean num = key >= 48 && key <= 57;
-            if (!num) {
-                evt.consume();
-                Toolkit.getDefaultToolkit().beep();
-            }
-            if (txt_sueldo.getText().trim().length() == 10);
-        }
-    }//GEN-LAST:event_txt_sueldoKeyTyped
-
     private void txt_userKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_userKeyTyped
         // TODO add your handling code here:
-        if (txt_user.getText().length() >= 15) {
+        if (txt_user.getText().length() >= 20) {
             evt.consume();
         }
     }//GEN-LAST:event_txt_userKeyTyped
@@ -713,14 +722,14 @@ public class FrameAdmin extends javax.swing.JFrame {
 
     private void txt_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_nombreKeyTyped
         // TODO add your handling code here:
-        if (txt_nombre.getText().length() >= 20) {
+        if (txt_nombre.getText().length() >= 45) {
             evt.consume();
         }
     }//GEN-LAST:event_txt_nombreKeyTyped
 
     private void txt_apellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_apellidoKeyTyped
         // TODO add your handling code here:
-        if (txt_apellido.getText().length() >= 20) {
+        if (txt_apellido.getText().length() >= 45) {
             evt.consume();
         }
     }//GEN-LAST:event_txt_apellidoKeyTyped
@@ -795,7 +804,7 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -821,7 +830,6 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txt_hab_numero;
     private javax.swing.JTextField txt_nombre;
     private javax.swing.JPasswordField txt_pass;
-    private javax.swing.JTextField txt_sueldo;
     private javax.swing.JTextField txt_user;
     private javax.swing.JTextField txt_username1;
     // End of variables declaration//GEN-END:variables
