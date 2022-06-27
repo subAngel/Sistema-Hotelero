@@ -733,7 +733,8 @@ public class FrameAdmin extends javax.swing.JFrame {
                 estado = "Si";
             else 
                 estado = "No";
-            rol = rol_combo.getSelectedItem().toString();
+            //rol = rol_combo.getSelectedItem().toString();
+            
             String privilegio = "";
 
             ConexionMySQL cn = new ConexionMySQL();
