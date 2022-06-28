@@ -43,55 +43,63 @@ public class FrameAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        panel_habitaciones = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaH = new javax.swing.JTable();
+        btn_modificarHab = new javax.swing.JButton();
+        btn_ingresarHab = new javax.swing.JButton();
+        btn_borrarHab = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        txt_idhab = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txt_nomHab = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        combo_tipohab = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txt_caracteristicas = new javax.swing.JTextArea();
+        txt_precio = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        combo_estado_hab = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
         panel_usuarios = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaU = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         txt_codigo = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txt_user = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txt_pass = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         txt_nombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txt_apellido = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txt_email = new javax.swing.JTextField();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        rol_combo = new javax.swing.JComboBox<>();
-        jLabel15 = new javax.swing.JLabel();
-        estado_combo = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        panel_habitaciones = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tablaH = new javax.swing.JTable();
-        btn_modificarHab = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        tipo_combo = new javax.swing.JComboBox<>();
-        jLabel11 = new javax.swing.JLabel();
-        txt_num = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txt_cara = new javax.swing.JTextArea();
-        jLabel12 = new javax.swing.JLabel();
-        estadoHab_combo = new javax.swing.JComboBox<>();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        txt_idemp = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_user = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        txt_precio = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        combo_curps = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
-        id_habitacion = new javax.swing.JTextField();
-        btn_ingresarHab = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        btn_borrarHab = new javax.swing.JButton();
+        combo_estadoemp = new javax.swing.JComboBox<>();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tabla_usuarios = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        btn_eliminar_usr = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
 
@@ -106,312 +114,6 @@ public class FrameAdmin extends javax.swing.JFrame {
         jTabbedPane1.setBackground(new java.awt.Color(98, 114, 164));
         jTabbedPane1.setForeground(new java.awt.Color(40, 42, 54));
         jTabbedPane1.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-
-        panel_usuarios.setBackground(new java.awt.Color(98, 114, 164));
-        panel_usuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tablaU.setFont(new java.awt.Font("Roboto Light", 0, 15)); // NOI18N
-        tablaU.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tablaU.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tablaUMousePressed(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tablaU);
-
-        panel_usuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 950, 200));
-
-        jButton5.setBackground(new java.awt.Color(255, 85, 85));
-        jButton5.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Eliminar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        panel_usuarios.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 120, 40));
-
-        jButton6.setBackground(new java.awt.Color(255, 121, 198));
-        jButton6.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Modificar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        panel_usuarios.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 120, 40));
-
-        jPanel5.setBackground(new java.awt.Color(98, 114, 164));
-        jPanel5.setForeground(new java.awt.Color(248, 248, 242));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel3.setBackground(new java.awt.Color(98, 114, 164));
-        java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
-        jPanel3Layout.columnWidths = new int[] {0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0};
-        jPanel3Layout.rowHeights = new int[] {0, 6, 0, 6, 0, 6, 0, 6, 0, 6, 0};
-        jPanel3.setLayout(jPanel3Layout);
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("CURP:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel3.add(jLabel9, gridBagConstraints);
-
-        txt_codigo.setBackground(new java.awt.Color(248, 248, 242));
-        txt_codigo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_codigo.setPreferredSize(new java.awt.Dimension(120, 30));
-        txt_codigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_codigoActionPerformed(evt);
-            }
-        });
-        txt_codigo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_codigoKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 25;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 1, 0);
-        jPanel3.add(txt_codigo, gridBagConstraints);
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel2.setText("Contraseña:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.3;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
-        jPanel3.add(jLabel2, gridBagConstraints);
-
-        txt_user.setBackground(new java.awt.Color(248, 248, 242));
-        txt_user.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_user.setForeground(new java.awt.Color(68, 71, 90));
-        txt_user.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_userKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 25;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 2);
-        jPanel3.add(txt_user, gridBagConstraints);
-
-        jLabel5.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel5.setText("Username:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel3.add(jLabel5, gridBagConstraints);
-
-        txt_pass.setBackground(new java.awt.Color(248, 248, 242));
-        txt_pass.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_pass.setForeground(new java.awt.Color(68, 71, 90));
-        txt_pass.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_passKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 25;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 7;
-        gridBagConstraints.ipady = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        jPanel3.add(txt_pass, gridBagConstraints);
-
-        jLabel3.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel3.setText("Nombres:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel3.add(jLabel3, gridBagConstraints);
-
-        txt_nombre.setBackground(new java.awt.Color(248, 248, 242));
-        txt_nombre.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_nombre.setForeground(new java.awt.Color(68, 71, 90));
-        txt_nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nombreActionPerformed(evt);
-            }
-        });
-        txt_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_nombreKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 25;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.insets = new java.awt.Insets(3, 1, 3, 1);
-        jPanel3.add(txt_nombre, gridBagConstraints);
-
-        jLabel4.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel4.setText("Apellidos:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel3.add(jLabel4, gridBagConstraints);
-
-        txt_apellido.setBackground(new java.awt.Color(248, 248, 242));
-        txt_apellido.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_apellido.setForeground(new java.awt.Color(68, 71, 90));
-        txt_apellido.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_apellidoKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 25;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 2, 0);
-        jPanel3.add(txt_apellido, gridBagConstraints);
-
-        jLabel8.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel8.setText("E-mail:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel3.add(jLabel8, gridBagConstraints);
-
-        txt_email.setBackground(new java.awt.Color(248, 248, 242));
-        txt_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_email.setForeground(new java.awt.Color(68, 71, 90));
-        txt_email.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                txt_emailComponentHidden(evt);
-            }
-        });
-        txt_email.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_emailKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 25;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(4, 0, 7, 0);
-        jPanel3.add(txt_email, gridBagConstraints);
-
-        jPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 430, -1));
-
-        jPanel6.setBackground(new java.awt.Color(98, 114, 164));
-        jPanel6.setLayout(new java.awt.GridLayout(3, 2, 20, 20));
-
-        jLabel14.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel14.setText("Rol:");
-        jLabel14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel6.add(jLabel14);
-
-        rol_combo.setBackground(new java.awt.Color(248, 248, 242));
-        rol_combo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        rol_combo.setForeground(new java.awt.Color(68, 71, 90));
-        rol_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Limpieza" }));
-        rol_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rol_comboActionPerformed(evt);
-            }
-        });
-        jPanel6.add(rol_combo);
-
-        jLabel15.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel15.setText("Estado:");
-        jPanel6.add(jLabel15);
-
-        estado_combo.setBackground(new java.awt.Color(248, 248, 242));
-        estado_combo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        estado_combo.setForeground(new java.awt.Color(68, 71, 90));
-        estado_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
-        estado_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                estado_comboActionPerformed(evt);
-            }
-        });
-        jPanel6.add(estado_combo);
-        jPanel6.add(jLabel7);
-
-        jButton3.setBackground(new java.awt.Color(80, 250, 123));
-        jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(98, 114, 164));
-        jButton3.setText("Agregar Empleado");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton3);
-
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 450, 160));
-
-        panel_usuarios.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 860, 300));
-
-        jLabel13.setBackground(new java.awt.Color(98, 114, 164));
-        jLabel13.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Datos del Empleado");
-        panel_usuarios.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
-
-        jButton8.setBackground(new java.awt.Color(255, 85, 85));
-        jButton8.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Eliminar");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        panel_usuarios.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 120, 40));
-
-        jTabbedPane1.addTab("Empleados", panel_usuarios);
 
         panel_habitaciones.setBackground(new java.awt.Color(98, 114, 164));
         panel_habitaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -436,7 +138,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tablaH);
 
-        panel_habitaciones.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 950, 200));
+        panel_habitaciones.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 980, 130));
 
         btn_modificarHab.setBackground(new java.awt.Color(255, 121, 198));
         btn_modificarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -449,171 +151,6 @@ public class FrameAdmin extends javax.swing.JFrame {
         });
         panel_habitaciones.add(btn_modificarHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, 210, 40));
 
-        jPanel7.setBackground(new java.awt.Color(98, 114, 164));
-        jPanel7.setForeground(new java.awt.Color(248, 248, 242));
-        jPanel7.setLayout(new java.awt.GridBagLayout());
-
-        jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel6.setText("Tipo de Habitación: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
-        jPanel7.add(jLabel6, gridBagConstraints);
-
-        tipo_combo.setBackground(new java.awt.Color(248, 248, 242));
-        tipo_combo.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        tipo_combo.setForeground(new java.awt.Color(68, 71, 90));
-        tipo_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Individual", "Doble", "Triple", "Queen" }));
-        tipo_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipo_comboActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        jPanel7.add(tipo_combo, gridBagConstraints);
-
-        jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel11.setText("Número de Habitación:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
-        jPanel7.add(jLabel11, gridBagConstraints);
-
-        txt_num.setBackground(new java.awt.Color(248, 248, 242));
-        txt_num.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        txt_num.setForeground(new java.awt.Color(68, 71, 90));
-        txt_num.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_numActionPerformed(evt);
-            }
-        });
-        txt_num.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_numKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(4, 0, 4, 0);
-        jPanel7.add(txt_num, gridBagConstraints);
-
-        jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel10.setText("Caracteristicas: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(24, 0, 24, 1);
-        jPanel7.add(jLabel10, gridBagConstraints);
-
-        txt_cara.setBackground(new java.awt.Color(248, 248, 242));
-        txt_cara.setColumns(20);
-        txt_cara.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        txt_cara.setForeground(new java.awt.Color(68, 71, 90));
-        txt_cara.setRows(5);
-        jScrollPane2.setViewportView(txt_cara);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        jPanel7.add(jScrollPane2, gridBagConstraints);
-
-        jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel12.setText("Estado:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(11, 0, 11, 0);
-        jPanel7.add(jLabel12, gridBagConstraints);
-
-        estadoHab_combo.setBackground(new java.awt.Color(248, 248, 242));
-        estadoHab_combo.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        estadoHab_combo.setForeground(new java.awt.Color(68, 71, 90));
-        estadoHab_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ocupada", "Limpia", "Sucia" }));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel7.add(estadoHab_combo, gridBagConstraints);
-
-        jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel16.setText("Precio: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(11, 0, 11, 0);
-        jPanel7.add(jLabel16, gridBagConstraints);
-
-        txt_precio.setBackground(new java.awt.Color(248, 248, 242));
-        txt_precio.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        txt_precio.setForeground(new java.awt.Color(68, 71, 90));
-        txt_precio.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_precioKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 0);
-        jPanel7.add(txt_precio, gridBagConstraints);
-
-        jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel18.setText("Id Habitación: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        jPanel7.add(jLabel18, gridBagConstraints);
-
-        id_habitacion.setBackground(new java.awt.Color(248, 248, 242));
-        id_habitacion.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        id_habitacion.setForeground(new java.awt.Color(68, 71, 90));
-        id_habitacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                id_habitacionActionPerformed(evt);
-            }
-        });
-        id_habitacion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                id_habitacionKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(7, 0, 7, 0);
-        jPanel7.add(id_habitacion, gridBagConstraints);
-
-        panel_habitaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 630, -1));
-
         btn_ingresarHab.setBackground(new java.awt.Color(80, 250, 123));
         btn_ingresarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         btn_ingresarHab.setForeground(new java.awt.Color(98, 114, 164));
@@ -623,18 +160,7 @@ public class FrameAdmin extends javax.swing.JFrame {
                 btn_ingresarHabActionPerformed(evt);
             }
         });
-        panel_habitaciones.add(btn_ingresarHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, 210, 40));
-
-        jButton9.setBackground(new java.awt.Color(80, 250, 123));
-        jButton9.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(98, 114, 164));
-        jButton9.setText("Ingresar Habitación");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        panel_habitaciones.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, -1, 40));
+        panel_habitaciones.add(btn_ingresarHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, 210, 40));
 
         btn_borrarHab.setBackground(new java.awt.Color(255, 85, 85));
         btn_borrarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -647,7 +173,543 @@ public class FrameAdmin extends javax.swing.JFrame {
         });
         panel_habitaciones.add(btn_borrarHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 210, 40));
 
+        jPanel5.setBackground(new java.awt.Color(98, 114, 164));
+        java.awt.GridBagLayout jPanel5Layout = new java.awt.GridBagLayout();
+        jPanel5Layout.columnWidths = new int[] {0, 7, 0};
+        jPanel5Layout.rowHeights = new int[] {0, 6, 0, 6, 0, 6, 0, 6, 0, 6, 0};
+        jPanel5.setLayout(jPanel5Layout);
+
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel7.setText("ID de Habitación");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel5.add(jLabel7, gridBagConstraints);
+
+        txt_idhab.setBackground(new java.awt.Color(248, 248, 242));
+        txt_idhab.setForeground(new java.awt.Color(68, 71, 90));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 9, 0);
+        jPanel5.add(txt_idhab, gridBagConstraints);
+
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel6.setText("Nombre de Habitación:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel5.add(jLabel6, gridBagConstraints);
+
+        txt_nomHab.setBackground(new java.awt.Color(248, 248, 242));
+        txt_nomHab.setForeground(new java.awt.Color(68, 71, 90));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 0.6;
+        gridBagConstraints.insets = new java.awt.Insets(4, 1, 3, 1);
+        jPanel5.add(txt_nomHab, gridBagConstraints);
+
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel10.setText("Tipo de Habitación:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel5.add(jLabel10, gridBagConstraints);
+
+        combo_tipohab.setBackground(new java.awt.Color(248, 248, 242));
+        combo_tipohab.setForeground(new java.awt.Color(68, 71, 90));
+        combo_tipohab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Individual", "Doble", "Triple", "King" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(9, 0, 6, 0);
+        jPanel5.add(combo_tipohab, gridBagConstraints);
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel11.setText("Características: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.ipadx = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel5.add(jLabel11, gridBagConstraints);
+
+        txt_caracteristicas.setBackground(new java.awt.Color(248, 248, 242));
+        txt_caracteristicas.setColumns(20);
+        txt_caracteristicas.setForeground(new java.awt.Color(68, 71, 90));
+        txt_caracteristicas.setRows(5);
+        jScrollPane2.setViewportView(txt_caracteristicas);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.insets = new java.awt.Insets(8, 0, 9, 0);
+        jPanel5.add(jScrollPane2, gridBagConstraints);
+
+        txt_precio.setBackground(new java.awt.Color(248, 248, 242));
+        txt_precio.setForeground(new java.awt.Color(68, 71, 90));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 0);
+        jPanel5.add(txt_precio, gridBagConstraints);
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel15.setText("Precio: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.ipadx = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel5.add(jLabel15, gridBagConstraints);
+
+        jLabel12.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel12.setText("Precio: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel5.add(jLabel12, gridBagConstraints);
+
+        combo_estado_hab.setBackground(new java.awt.Color(248, 248, 242));
+        combo_estado_hab.setForeground(new java.awt.Color(68, 71, 90));
+        combo_estado_hab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ocupada", "Vacía Limpia", "Vacía Sucia" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 6, 0);
+        jPanel5.add(combo_estado_hab, gridBagConstraints);
+
+        panel_habitaciones.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 550, 370));
+
+        jLabel14.setFont(new java.awt.Font("Roboto Black", 0, 30)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel14.setText("Información de las Habitaciones");
+        panel_habitaciones.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
+
         jTabbedPane1.addTab("Habitaciones", panel_habitaciones);
+
+        panel_usuarios.setBackground(new java.awt.Color(98, 114, 164));
+        panel_usuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaU.setFont(new java.awt.Font("Roboto Light", 0, 15)); // NOI18N
+        tablaU.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tablaU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tablaUMousePressed(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tablaU);
+
+        panel_usuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 960, 320));
+
+        jLabel13.setBackground(new java.awt.Color(98, 114, 164));
+        jLabel13.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Datos del Empleado");
+        panel_usuarios.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+
+        jButton3.setBackground(new java.awt.Color(80, 250, 123));
+        jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(98, 114, 164));
+        jButton3.setText("Agregar Empleado");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        panel_usuarios.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 80, 210, 40));
+
+        jPanel3.setBackground(new java.awt.Color(98, 114, 164));
+        java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
+        jPanel3Layout.columnWidths = new int[] {0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0};
+        jPanel3Layout.rowHeights = new int[] {0, 6, 0, 6, 0, 6, 0};
+        jPanel3.setLayout(jPanel3Layout);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("CURP:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel3.add(jLabel9, gridBagConstraints);
+
+        txt_codigo.setBackground(new java.awt.Color(248, 248, 242));
+        txt_codigo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_codigo.setForeground(new java.awt.Color(68, 71, 90));
+        txt_codigo.setPreferredSize(new java.awt.Dimension(120, 30));
+        txt_codigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_codigoActionPerformed(evt);
+            }
+        });
+        txt_codigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_codigoKeyTyped(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 25;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(8, 0, 3, 0);
+        jPanel3.add(txt_codigo, gridBagConstraints);
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel3.setText("Nombres:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel3.add(jLabel3, gridBagConstraints);
+
+        txt_nombre.setBackground(new java.awt.Color(248, 248, 242));
+        txt_nombre.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_nombre.setForeground(new java.awt.Color(68, 71, 90));
+        txt_nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nombreActionPerformed(evt);
+            }
+        });
+        txt_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_nombreKeyTyped(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 25;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
+        gridBagConstraints.insets = new java.awt.Insets(3, 1, 3, 1);
+        jPanel3.add(txt_nombre, gridBagConstraints);
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel4.setText("Apellidos:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel3.add(jLabel4, gridBagConstraints);
+
+        txt_apellido.setBackground(new java.awt.Color(248, 248, 242));
+        txt_apellido.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_apellido.setForeground(new java.awt.Color(68, 71, 90));
+        txt_apellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_apellidoKeyTyped(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 25;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 2, 0);
+        jPanel3.add(txt_apellido, gridBagConstraints);
+
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel8.setText("E-mail:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel3.add(jLabel8, gridBagConstraints);
+
+        txt_email.setBackground(new java.awt.Color(248, 248, 242));
+        txt_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_email.setForeground(new java.awt.Color(68, 71, 90));
+        txt_email.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                txt_emailComponentHidden(evt);
+            }
+        });
+        txt_email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_emailKeyTyped(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 25;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 8, 0);
+        jPanel3.add(txt_email, gridBagConstraints);
+
+        panel_usuarios.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 450, 210));
+
+        jButton6.setBackground(new java.awt.Color(255, 121, 198));
+        jButton6.setFont(new java.awt.Font("Roboto", 1, 17)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Modificar Empleado");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        panel_usuarios.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 150, 210, 40));
+
+        jButton8.setBackground(new java.awt.Color(255, 85, 85));
+        jButton8.setFont(new java.awt.Font("Roboto", 1, 17)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Eliminar Empleado");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        panel_usuarios.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, 210, 40));
+
+        jTabbedPane1.addTab("Empleados", panel_usuarios);
+
+        jPanel4.setBackground(new java.awt.Color(98, 114, 164));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel6.setBackground(new java.awt.Color(98, 114, 164));
+        java.awt.GridBagLayout jPanel6Layout = new java.awt.GridBagLayout();
+        jPanel6Layout.columnWidths = new int[] {0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0};
+        jPanel6Layout.rowHeights = new int[] {0, 6, 0, 6, 0};
+        jPanel6.setLayout(jPanel6Layout);
+
+        jLabel19.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel19.setText("ID usuario:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 11);
+        jPanel6.add(jLabel19, gridBagConstraints);
+
+        txt_idemp.setBackground(new java.awt.Color(248, 248, 242));
+        txt_idemp.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        txt_idemp.setForeground(new java.awt.Color(68, 71, 90));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 18;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        jPanel6.add(txt_idemp, gridBagConstraints);
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel5.setText("Username:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 11);
+        jPanel6.add(jLabel5, gridBagConstraints);
+
+        txt_user.setBackground(new java.awt.Color(248, 248, 242));
+        txt_user.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        txt_user.setForeground(new java.awt.Color(68, 71, 90));
+        txt_user.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_userKeyTyped(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 18;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 9, 0);
+        jPanel6.add(txt_user, gridBagConstraints);
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel2.setText("Contraseña:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weighty = 0.3;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 11);
+        jPanel6.add(jLabel2, gridBagConstraints);
+
+        jLabel16.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel16.setText("Rol:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weighty = 0.3;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
+        jPanel6.add(jLabel16, gridBagConstraints);
+
+        jComboBox1.setBackground(new java.awt.Color(248, 248, 242));
+        jComboBox1.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(68, 71, 90));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Limpieza" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 15;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel6.add(jComboBox1, gridBagConstraints);
+
+        jLabel17.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel17.setText("Curp Empleado:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weighty = 0.3;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
+        jPanel6.add(jLabel17, gridBagConstraints);
+
+        combo_curps.setBackground(new java.awt.Color(248, 248, 242));
+        combo_curps.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        combo_curps.setForeground(new java.awt.Color(68, 71, 90));
+        combo_curps.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 15;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel6.add(combo_curps, gridBagConstraints);
+
+        jLabel18.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel18.setText("Estado:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weighty = 0.3;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
+        jPanel6.add(jLabel18, gridBagConstraints);
+
+        combo_estadoemp.setBackground(new java.awt.Color(248, 248, 242));
+        combo_estadoemp.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        combo_estadoemp.setForeground(new java.awt.Color(68, 71, 90));
+        combo_estadoemp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 15;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel6.add(combo_estadoemp, gridBagConstraints);
+
+        jPasswordField1.setBackground(new java.awt.Color(248, 248, 242));
+        jPasswordField1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(68, 71, 90));
+        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 43;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BELOW_BASELINE;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 4);
+        jPanel6.add(jPasswordField1, gridBagConstraints);
+
+        jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 580, 150));
+
+        jLabel20.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel20.setText("Datos del Usuario");
+        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 320, 50));
+
+        tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(tabla_usuarios);
+
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 960, 290));
+
+        jButton1.setBackground(new java.awt.Color(80, 250, 123));
+        jButton1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(68, 71, 90));
+        jButton1.setText("Agregar Usuario");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 180, 40));
+
+        jButton2.setBackground(new java.awt.Color(255, 121, 198));
+        jButton2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(248, 248, 242));
+        jButton2.setText("Modificar Usuario");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, -1, 50));
+
+        btn_eliminar_usr.setBackground(new java.awt.Color(255, 85, 85));
+        btn_eliminar_usr.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        btn_eliminar_usr.setForeground(new java.awt.Color(248, 248, 242));
+        btn_eliminar_usr.setText("Eliminar Usuario");
+        jPanel4.add(btn_eliminar_usr, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, 180, 40));
+
+        jTabbedPane1.addTab("Usuarios", jPanel4);
 
         jPanel2.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1000, 670));
 
@@ -678,10 +740,6 @@ public class FrameAdmin extends javax.swing.JFrame {
     private void txt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_nombreActionPerformed
-
-    private void rol_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rol_comboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rol_comboActionPerformed
 
     private void txt_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_codigoActionPerformed
         // TODO add your handling code here:
@@ -805,62 +863,6 @@ public class FrameAdmin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_tablaUMousePressed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
-        String us = txt_codigo.getText();
-
-        ConexionMySQL cn = new ConexionMySQL();
-        cn.ConectarBasedeDatos();
-
-        ResultSet rs = cn.accion("DELETE FROM hotel.empleado WHERE curp = '" + us + "'");    //' AND USERNAME = '+"+us+"'"); 
-        this.mostrarTablaEmpleados();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if (!isEmail(txt_email.getText())) {
-            JOptionPane.showMessageDialog(null, "Correo electrónico inválido", "e-mail inválido", JOptionPane.ERROR_MESSAGE);
-        } else {
-            String curp = txt_codigo.getText();
-            String user = txt_user.getText();
-            String pass = txt_pass.getText();
-            String nombre = txt_nombre.getText();
-            String apellido = txt_apellido.getText();
-            //String salario = txt_sueldo.getText();
-            //double sueldo = Double.parseDouble(salario);
-            String email = txt_email.getText();
-            String rol = rol_combo.getSelectedItem().toString(), estado = estado_combo.getSelectedItem().toString();
-            if (rol.equals("Recepcionista"))
-                rol = "1";
-            else 
-                rol = "2";
-            if(estado.equals("Activo"))
-                estado = "Si";
-            else 
-                estado = "No";
-            //rol = rol_combo.getSelectedItem().toString();
-<<<<<<< HEAD
-=======
-            
->>>>>>> ed40e5db10f4c2361a685d9e7d795130d779316d
-            String privilegio = "";
-
-            ConexionMySQL cn = new ConexionMySQL();
-            cn.ConectarBasedeDatos();
-
-            ResultSet rs = cn.accion("UPDATE empleado SET username = '" + user + "',password = '" + pass + "',nombres = '" + nombre + 
-                    "',apellidos = '" + apellido + "', email = '" + email + "',rol = " + rol +  
-<<<<<<< HEAD
-                    ", activo = '" +estado+"'" +
-                    " WHERE curp = '" + curp + "'");
-=======
-                    ", activo = '" +estado+"" +
-                    "'   WHERE curp = '" + curp + "'");
->>>>>>> ed40e5db10f4c2361a685d9e7d795130d779316d
-            this.mostrarTablaEmpleados();
-        }
-
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         this.dispose();
         LogIn a = new LogIn();
@@ -938,13 +940,6 @@ public class FrameAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txt_userKeyTyped
 
-    private void txt_passKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_passKeyTyped
-        // TODO add your handling code here:
-        if (txt_pass.getText().length() >= 10) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_passKeyTyped
-
     private void txt_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_nombreKeyTyped
         // TODO add your handling code here:
         if (txt_nombre.getText().length() >= 45) {
@@ -969,14 +964,6 @@ public class FrameAdmin extends javax.swing.JFrame {
     private void txt_emailComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_txt_emailComponentHidden
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_emailComponentHidden
-
-    private void estado_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estado_comboActionPerformed
-     
-       
-        
-        
-        
-    }//GEN-LAST:event_estado_comboActionPerformed
 
     private void btn_modificarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarHabActionPerformed
       
@@ -1015,10 +1002,6 @@ public class FrameAdmin extends javax.swing.JFrame {
      
         
     }//GEN-LAST:event_btn_modificarHabActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btn_ingresarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarHabActionPerformed
       
@@ -1060,10 +1043,6 @@ public class FrameAdmin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_ingresarHabActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
     private void btn_borrarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarHabActionPerformed
      
          int id = Integer.parseInt(id_habitacion.getText());
@@ -1074,18 +1053,6 @@ public class FrameAdmin extends javax.swing.JFrame {
         ResultSet rs = cn.accion("DELETE FROM hotel.habitacion WHERE id_hab = '" + id + "'");    //' AND USERNAME = '+"+us+"'"); 
         this.mostrarTablaHabitaciones();
     }//GEN-LAST:event_btn_borrarHabActionPerformed
-
-    private void txt_numActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_numActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_numActionPerformed
-
-    private void id_habitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_habitacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_id_habitacionActionPerformed
-
-    private void tipo_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo_comboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tipo_comboActionPerformed
 
     private void tablaHMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaHMousePressed
        
@@ -1138,53 +1105,65 @@ public class FrameAdmin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_tablaHMousePressed
 
-    private void id_habitacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_id_habitacionKeyTyped
-       int key = evt.getKeyChar();
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
-    boolean numeros = key >= 48 && key <= 57;
-        
-    if (!numeros)
-    {
-        evt.consume();
-    }
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if (!isEmail(txt_email.getText())) {
+            JOptionPane.showMessageDialog(null, "Correo electrónico inválido", "e-mail inválido", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String curp = txt_codigo.getText();
+            String user = txt_user.getText();
+            String pass = txt_pass.getText();
+            String nombre = txt_nombre.getText();
+            String apellido = txt_apellido.getText();
+            //String salario = txt_sueldo.getText();
+            //double sueldo = Double.parseDouble(salario);
+            String email = txt_email.getText();
+            String rol = rol_combo.getSelectedItem().toString(), estado = estado_combo.getSelectedItem().toString();
+            if (rol.equals("Recepcionista"))
+            rol = "1";
+            else
+            rol = "2";
+            if(estado.equals("Activo"))
+            estado = "Si";
+            else
+            estado = "No";
+            //rol = rol_combo.getSelectedItem().toString();
+            <<<<<<< HEAD
+            =======
 
-    if (id_habitacion.getText().trim().length() == 10) {
-        evt.consume();
-    }
-    }//GEN-LAST:event_id_habitacionKeyTyped
+            >>>>>>> ed40e5db10f4c2361a685d9e7d795130d779316d
+            String privilegio = "";
 
-    private void txt_numKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_numKeyTyped
-        int key = evt.getKeyChar();
+            ConexionMySQL cn = new ConexionMySQL();
+            cn.ConectarBasedeDatos();
 
-    boolean numeros = key >= 48 && key <= 57;
-        
-    if (!numeros)
-    {
-        evt.consume();
-    }
+            ResultSet rs = cn.accion("UPDATE empleado SET username = '" + user + "',password = '" + pass + "',nombres = '" + nombre +
+                "',apellidos = '" + apellido + "', email = '" + email + "',rol = " + rol +
+                <<<<<<< HEAD
+                ", activo = '" +estado+"'" +
+                " WHERE curp = '" + curp + "'");
+            =======
+            ", activo = '" +estado+"" +
+            "'   WHERE curp = '" + curp + "'");
+        >>>>>>> ed40e5db10f4c2361a685d9e7d795130d779316d
+        this.mostrarTablaEmpleados();
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
 
-    if (id_habitacion.getText().trim().length() == 10) {
-        evt.consume();
-    }
-        
-    }//GEN-LAST:event_txt_numKeyTyped
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+248,248,242        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-    private void txt_precioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_precioKeyTyped
-      
-           int key = evt.getKeyChar();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    boolean numeros = key >= 48 && key <= 57;
-        
-    if (!numeros)
-    {
-        evt.consume();
-    }
-
-    if (id_habitacion.getText().trim().length() == 10) {
-        evt.consume();
-    }
-        
-    }//GEN-LAST:event_txt_precioKeyTyped
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1223,17 +1202,20 @@ public class FrameAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_borrarHab;
+    private javax.swing.JButton btn_eliminar_usr;
     private javax.swing.JButton btn_ingresarHab;
     private javax.swing.JButton btn_modificarHab;
-    private javax.swing.JComboBox<String> estadoHab_combo;
-    private javax.swing.JComboBox<String> estado_combo;
-    private javax.swing.JTextField id_habitacion;
+    private javax.swing.JComboBox<String> combo_curps;
+    private javax.swing.JComboBox<String> combo_estado_hab;
+    private javax.swing.JComboBox<String> combo_estadoemp;
+    private javax.swing.JComboBox<String> combo_tipohab;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1242,8 +1224,11 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1254,26 +1239,28 @@ public class FrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel panel_habitaciones;
     private javax.swing.JPanel panel_usuarios;
-    private javax.swing.JComboBox<String> rol_combo;
     private javax.swing.JTable tablaH;
     private javax.swing.JTable tablaU;
-    private javax.swing.JComboBox<String> tipo_combo;
+    private javax.swing.JTable tabla_usuarios;
     private javax.swing.JTextField txt_apellido;
-    private javax.swing.JTextArea txt_cara;
+    private javax.swing.JTextArea txt_caracteristicas;
     private javax.swing.JTextField txt_codigo;
     private javax.swing.JTextField txt_email;
+    private javax.swing.JTextField txt_idemp;
+    private javax.swing.JTextField txt_idhab;
+    private javax.swing.JTextField txt_nomHab;
     private javax.swing.JTextField txt_nombre;
-    private javax.swing.JTextField txt_num;
-    private javax.swing.JPasswordField txt_pass;
     private javax.swing.JTextField txt_precio;
     private javax.swing.JTextField txt_user;
     // End of variables declaration//GEN-END:variables
