@@ -87,11 +87,11 @@ public class FrameAdmin extends javax.swing.JFrame {
         estadoHab_combo = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         txt_precio = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        id_habitacion = new javax.swing.JTextField();
         btn_ingresarHab = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         btn_borrarHab = new javax.swing.JButton();
-        id_habitacion = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
 
@@ -417,6 +417,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         panel_habitaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaH.setBackground(new java.awt.Color(248, 248, 242));
+        tablaH.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
         tablaH.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -435,7 +436,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tablaH);
 
-        panel_habitaciones.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 830, 190));
+        panel_habitaciones.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 950, 200));
 
         btn_modificarHab.setBackground(new java.awt.Color(255, 121, 198));
         btn_modificarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -450,17 +451,14 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(98, 114, 164));
         jPanel7.setForeground(new java.awt.Color(248, 248, 242));
-        java.awt.GridBagLayout jPanel7Layout = new java.awt.GridBagLayout();
-        jPanel7Layout.columnWidths = new int[] {0, 10, 0, 10, 0};
-        jPanel7Layout.rowHeights = new int[] {0, 6, 0, 6, 0, 6, 0, 6, 0};
-        jPanel7.setLayout(jPanel7Layout);
+        jPanel7.setLayout(new java.awt.GridBagLayout());
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(248, 248, 242));
         jLabel6.setText("Tipo de Habitación: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
         jPanel7.add(jLabel6, gridBagConstraints);
@@ -476,9 +474,10 @@ public class FrameAdmin extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         jPanel7.add(tipo_combo, gridBagConstraints);
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -499,11 +498,17 @@ public class FrameAdmin extends javax.swing.JFrame {
                 txt_numActionPerformed(evt);
             }
         });
+        txt_num.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_numKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(4, 0, 4, 0);
         jPanel7.add(txt_num, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -511,9 +516,9 @@ public class FrameAdmin extends javax.swing.JFrame {
         jLabel10.setText("Caracteristicas: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(32, 0, 32, 1);
+        gridBagConstraints.insets = new java.awt.Insets(24, 0, 24, 1);
         jPanel7.add(jLabel10, gridBagConstraints);
 
         txt_cara.setBackground(new java.awt.Color(248, 248, 242));
@@ -525,9 +530,10 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         jPanel7.add(jScrollPane2, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -535,7 +541,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jLabel12.setText("Estado:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(11, 0, 11, 0);
         jPanel7.add(jLabel12, gridBagConstraints);
@@ -546,8 +552,8 @@ public class FrameAdmin extends javax.swing.JFrame {
         estadoHab_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ocupada", "Limpia", "Sucia" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel7.add(estadoHab_combo, gridBagConstraints);
 
@@ -556,7 +562,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         jLabel16.setText("Precio: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(11, 0, 11, 0);
         jPanel7.add(jLabel16, gridBagConstraints);
@@ -564,14 +570,49 @@ public class FrameAdmin extends javax.swing.JFrame {
         txt_precio.setBackground(new java.awt.Color(248, 248, 242));
         txt_precio.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
         txt_precio.setForeground(new java.awt.Color(68, 71, 90));
+        txt_precio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_precioKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 0);
         jPanel7.add(txt_precio, gridBagConstraints);
 
-        panel_habitaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 580, 330));
+        jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(248, 248, 242));
+        jLabel18.setText("Id Habitación: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        jPanel7.add(jLabel18, gridBagConstraints);
+
+        id_habitacion.setBackground(new java.awt.Color(248, 248, 242));
+        id_habitacion.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
+        id_habitacion.setForeground(new java.awt.Color(68, 71, 90));
+        id_habitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                id_habitacionActionPerformed(evt);
+            }
+        });
+        id_habitacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                id_habitacionKeyTyped(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 7, 0);
+        jPanel7.add(id_habitacion, gridBagConstraints);
+
+        panel_habitaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 630, -1));
 
         btn_ingresarHab.setBackground(new java.awt.Color(80, 250, 123));
         btn_ingresarHab.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -605,26 +646,6 @@ public class FrameAdmin extends javax.swing.JFrame {
             }
         });
         panel_habitaciones.add(btn_borrarHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 210, 40));
-
-        id_habitacion.setBackground(new java.awt.Color(248, 248, 242));
-        id_habitacion.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
-        id_habitacion.setForeground(new java.awt.Color(68, 71, 90));
-        id_habitacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                id_habitacionActionPerformed(evt);
-            }
-        });
-        id_habitacion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                id_habitacionKeyTyped(evt);
-            }
-        });
-        panel_habitaciones.add(id_habitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 90, -1));
-
-        jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(248, 248, 242));
-        jLabel18.setText("Id Habitación: ");
-        panel_habitaciones.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, -1));
 
         jTabbedPane1.addTab("Habitaciones", panel_habitaciones);
 
@@ -715,14 +736,14 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         try {
             DefaultTableModel dt = new DefaultTableModel();
-            dt.addColumn("Id Habitacion");
+            dt.addColumn("ID Habitacion");
             dt.addColumn("Tipo");
             //dt.addColumn("Password");
             dt.addColumn("Caracteristicas");
             //dt.addColumn("Apellidos");
             dt.addColumn("Precio");
             dt.addColumn("Estado");
-            dt.addColumn("Numero");
+            dt.addColumn("Num. Hab.");
            
 
             while (rs.next()) {
@@ -816,7 +837,7 @@ public class FrameAdmin extends javax.swing.JFrame {
                 estado = "Si";
             else 
                 estado = "No";
-            rol = rol_combo.getSelectedItem().toString();
+            //rol = rol_combo.getSelectedItem().toString();
             String privilegio = "";
 
             ConexionMySQL cn = new ConexionMySQL();
@@ -1122,6 +1143,39 @@ public class FrameAdmin extends javax.swing.JFrame {
         evt.consume();
     }
     }//GEN-LAST:event_id_habitacionKeyTyped
+
+    private void txt_numKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_numKeyTyped
+        int key = evt.getKeyChar();
+
+    boolean numeros = key >= 48 && key <= 57;
+        
+    if (!numeros)
+    {
+        evt.consume();
+    }
+
+    if (id_habitacion.getText().trim().length() == 10) {
+        evt.consume();
+    }
+        
+    }//GEN-LAST:event_txt_numKeyTyped
+
+    private void txt_precioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_precioKeyTyped
+      
+           int key = evt.getKeyChar();
+
+    boolean numeros = key >= 48 && key <= 57;
+        
+    if (!numeros)
+    {
+        evt.consume();
+    }
+
+    if (id_habitacion.getText().trim().length() == 10) {
+        evt.consume();
+    }
+        
+    }//GEN-LAST:event_txt_precioKeyTyped
 
     /**
      * @param args the command line arguments
