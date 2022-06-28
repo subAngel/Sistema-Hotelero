@@ -692,7 +692,7 @@ public class FrameAdmin extends javax.swing.JFrame {
 
         // ResultSet rs = cn.consulta("SELECT codigo,username,password,nombre,apellido,telefono,email,rol  FROM USUARIO");
         cn.ConectarBasedeDatos();
-        ResultSet rs = cn.consulta("SELECT curp, username, nombres, apellidos, email, rol, activo FROM empleado where rol!='3';");
+        ResultSet rs = cn.consulta("SELECT curp, username, nombres, email, rol, activo FROM empleado where rol!='3';");
 
         try {
             DefaultTableModel dt = new DefaultTableModel();
@@ -838,6 +838,10 @@ public class FrameAdmin extends javax.swing.JFrame {
             else 
                 estado = "No";
             //rol = rol_combo.getSelectedItem().toString();
+<<<<<<< HEAD
+=======
+            
+>>>>>>> ed40e5db10f4c2361a685d9e7d795130d779316d
             String privilegio = "";
 
             ConexionMySQL cn = new ConexionMySQL();
@@ -845,8 +849,13 @@ public class FrameAdmin extends javax.swing.JFrame {
 
             ResultSet rs = cn.accion("UPDATE empleado SET username = '" + user + "',password = '" + pass + "',nombres = '" + nombre + 
                     "',apellidos = '" + apellido + "', email = '" + email + "',rol = " + rol +  
+<<<<<<< HEAD
                     ", activo = '" +estado+"'" +
                     " WHERE curp = '" + curp + "'");
+=======
+                    ", activo = '" +estado+"" +
+                    "'   WHERE curp = '" + curp + "'");
+>>>>>>> ed40e5db10f4c2361a685d9e7d795130d779316d
             this.mostrarTablaEmpleados();
         }
 

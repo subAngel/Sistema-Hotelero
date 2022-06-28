@@ -64,7 +64,7 @@ public class ConexionMySQL {
            //System.out.println("Usuario creado y priviegios otorgados");
            
        } catch (Exception e) {
-           System.err.println("Error al crear el usuario....");
+           //System.err.println("Error al crear el usuario....");
        }
        return rs;
    }
